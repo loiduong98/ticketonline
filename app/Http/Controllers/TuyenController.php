@@ -26,16 +26,16 @@ class TuyenController extends Controller
         $ben = ben::all();
         $this->validate($request,
             [
-                'TenTuyen'=>'required|min:3|max:100|unique:tuyen',
+                // 'TenTuyen'=>'required|min:3|max:100|unique:tuyen',
                 'idBenDi'=>'required',
                 'idBenDen'=>'required'
             ],
             [
                 'idBenDi.required'=>'Bạn chưa chọn điểm đi',
-                'idBenDen.required'=>'Bạn chưa chọn điểm đến',
-                'TenTuyen.required'=>'Bạn chưa nhập tên tuyến',
-                'TenTuyen.min'=>'Tên tuyến quá ngắn',
-                'TenTuyen.max'=>'Tên tuyến quá dài'
+                'idBenDen.required'=>'Bạn chưa chọn điểm đến'
+                // 'TenTuyen.required'=>'Bạn chưa nhập tên tuyến',
+                // 'TenTuyen.min'=>'Tên tuyến quá ngắn',
+                // 'TenTuyen.max'=>'Tên tuyến quá dài'
             ]);
         $tuyen = new tuyen;
         $tuyen->TenTuyen = $request->TenTuyen;

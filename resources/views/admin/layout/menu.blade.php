@@ -78,13 +78,13 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="#"><i class="fas fa-th-large"></i> Chi tiết vé<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fas fa-th-large"></i> Vé<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="admin/chitietve/danhsach">Danh sách Chi tiết vé</a>
+                                    <a href="admin/ve/danhsach">Danh sách vé</a>
                                 </li>
                                 <li>
-                                    <a href="admin/chitietve/them">Thêm chi tiết vé<</a>
+                                    <a href="admin/ve/them">Thêm vé</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
