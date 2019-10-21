@@ -31,17 +31,25 @@
                             <div>
                                 <label>Điểm đi</label>
                                 <select class="form-control" name="idBenDi" id="idBenDi">
-                                    @foreach($ben as $b)
-                                    <option value="{{$b->id}}">{{$b->TenBen}}</option>
+                                    @foreach($tuyen as $t)
+                                    <option value="{{$t->ben->id}}">{{$t->ben->TenBen}}</option>
                                     @endforeach
+                                    <!-- @foreach($ben as $b)                                   
+                                    <option
+                                    @if($tuyen->idBenDi == $tuyen->id)
+                                        {{"selected"}}
+                                    @endif
+                                     value="{{$b->id}}">{{$b->TenBen}}
+                                    </option>
+                                    @endforeach -->
                                 </select>
                             </div>
                             
                             <div>
                                 <label>Điểm đến</label>
                                 <select class="form-control" name="idBenDen" id="idBenDen">
-                                    @foreach($ben as $b)
-                                    <option value="{{$b->id}}">{{$b->TenBen}}</option>
+                                    @foreach($tuyen as $t)
+                                    <option value="{{$t->ben->id}}">{{$t->ben->TenBen}}</option>
                                     @endforeach
                                 </select>
                             </div> 

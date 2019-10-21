@@ -34,7 +34,7 @@ class XeController extends Controller
     		]);
     	$xe = new xe;
     	$xe->BSXe = $request->BSXe;
-    	$xe->idSoDoGhe = $request->idSoDoGhe;
+    	$xe->idSoDoGhe = $request->sodoghe;
     	$xe->save();
     	return redirect('admin/xe/them')->with('thongbao','Thêm thành công');
     }
@@ -60,7 +60,7 @@ class XeController extends Controller
     			'BSXe.max'=>'Bạn phải nhập dưới 20 ký tự'
     		]);
 			$xe->BSXe = $request->BSXe;
-			$xe->idSoDoGhe = $request->idSoDoGhe;
+			$xe->idSoDoGhe = $request->sodoghe;
 			$xe->save();
     	return redirect('admin/xe/sua/'.$id)->with('thongbao','Sửa thành công');
     }

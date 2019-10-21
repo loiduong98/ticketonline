@@ -13,4 +13,8 @@ class chitietghe extends Model
     {
     	return $this->belongsTo('App\chitietve','idGhe','id');
     }
+    public function sodoghe()
+    {
+    	return $this->belongsTo('App\sodoghe','idSoDoGhe','id');
+    }
 }

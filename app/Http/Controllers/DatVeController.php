@@ -7,93 +7,59 @@ use App\tuyen;
 use App\lichchay;
 use App\khachhang;
 use App\chitietghe;
-use App\phuongthucthanhtoan;
+use App\hinhthucthanhtoan;
+use App\ben;
 
 class DatVeController extends Controller
 {
     public function getTT1()
     {
-    	return view('page.layout.check-1');
-    }
-    public function postThemTT1(Request $request)
-    {
         $tuyen = tuyen::all();
-        $this->validate($request,
-            [
-                'idBenDi'=>'required',
-                'idBenDen'=>'required' 
-            ],
-            [
-                'idBenDi.required'=>'Bạn chưa chọn tên bến đi',
-                'idBenDen.required'=>'Bạn chưa chọn tên bến đến'
-            ]);
-        $tuyen = new tuyen;
-        $tuyen->idBenDi = $request->idBenDi;
-        $tuyen->idBenDen = $request->idBenDen;
-        $tuyen->save();
-        return redirect('page/checkout/2');
+        $ben = ben::all();
+        $lichchay = lichchay::all();
+    	return view('page.layout.checkout1');
     }
-
     public function getTT2()
     {
-    	return view('page.layout.check-2');
-    }
-    public function postThemTT2(Request $request)
-    {
         $chitietghe = chitietghe::all();
-        $this->validate($request,
-            [
-                'TenGhe'=>'required',
-            ],
-            [
-                'TenGhe.required'=>'Bạn chưa chọn ghế',
-            ]);
-        $chitietghe = new chitietghe;
-        $chitietghe->TenGhe = $request->TenGhe;
-        $chitietghe->save();
-        return redirect('page/checkout/3');
+    	return view('page.layout.checkout2');
     }
-
     public function getTT3()
     {
-    	return view('page.layout.check-3');
+        $khachhang = khachhang::all();
+    	return view('page.layout.checkout3');
     }
-    public function postThemTT3(Request $request)
-    {
-        $lichchay = lichchay::all();
-        $this->validate($request,
-            [
-                'NgayKhoiHanh'=>'required',
-                'GioKhoiHanh'=>'required'
-            ],
-            [
-                'NgayKhoiHanh.required'=>'Bạn chưa chọn ngày khởi hành',
-                'GioKhoiHanh.required'=>'Bạn chưa chọn giờ khởi hành',
-            ]);
-        $lichchay = new lichchay;
-        $lichchay->NgayKhoiHanh = $request->NgayKhoiHanh;
-        $lichchay->GioKhoiHanh = $request->GioKhoiHanh;
-        $lichchay->save();
-        return redirect('page/checkout/4');
-    }
-
     public function getTT4()
     {
-    	return view('page.layout.check-4');
+        $hinhthucthanhtoan = hinhthucthanhtoan::all();
+    	return view('page.layout.checkout4');
     }
-    public function postThemTT4(Request $request)
+    public function postTT4(Request $request)
     {
-        $phuongthucthanhtoan = phuongthucthanhtoan::all();
-        $this->validate($request,
-            [
-                'TenPTTT'=>'required',
-            ],
-            [
-                'TenPTTT.required'=>'Bạn chưa chọn ghế',
-            ]);
-        $phuongthucthanhtoan = new phuongthucthanhtoan;
-        $phuongthucthanhtoan->TenPTTT = $request->TenPTTT;
-        $phuongthucthanhtoan->save();
+        $lichchay = new lichchay;
+
+        $tuyen->idBenDi;
+        $tuyen->idBenDen; 
+        $lichchay->NgayKhoiHanh;
+        $lichchay->GioKhoiHanh;
+        $lichchay->Gia;
+        // @if(($tuyen) > 0)     
+        //         @foreach($tuyen->all() as $err){{$err}}<br>
+        //         @endforeach      
+        // @endif
+        
+        $chitietghe = new chitietghe;
+        $chitietghe->TenGhe;
+         
+        
+
+        $hinhthucthanhtoan = new hinhthucthanhtoan;
+        $hinhthucthanhtoan->TenHTTT;
+        $lichchay->save();
+        $chitietghe->save();
+        $tuyen->save();
+        $hinhthucthanhtoan->save();
+        return $request->all();
         return redirect('page/checkout/datvethanhcong')->with('thongbao','Đặt vé thành công');
     }
     public function getDVTC()

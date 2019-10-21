@@ -18,8 +18,10 @@
                                 <th>Email</th>
                                 <th>Địa chỉ</th>
                                 <th>Ngày sinh</th>
-                                <th>Id Chức vụ</th>
-                                <th>Id Users</th>
+                                <th>Chức vụ</th>
+                                <th>Username</th>
+                                <th>Giới Tính</th>
+                                <th>Tình trạng</th>
                                 <th>Xóa</th>
                                 <th>Sửa</th>
                             </tr>
@@ -33,8 +35,10 @@
                                 <td>{{$nv->Email}}</td>
                                 <td>{{$nv->DiaChi}}</td>
                                 <td>{{$nv->NgaySinh}}</td>
-                                <td>{{$nv->idCV}}</td>
-                                <td>{{$nv->idUsers}}</td>
+                                <td>{{$nv->chucvu->TenCV}}</td>
+                                <td>{{$nv->users->username}}</td>
+                                <td>{{$nv->GioiTinh}}</td>
+                                <td>{{$nv->TinhTrang}}</td>
                                 <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="admin/nhanvien/xoa/{{$nv->id}}"> Xóa</a></td>
                                 <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="admin/nhanvien/sua/{{$nv->id}}">Sửa</a></td>
                             </tr>

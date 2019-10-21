@@ -45,12 +45,35 @@
                                 <input class="form-control" type="date" name="NgaySinh" placeholder="Chọn ngày sinh" />
                             </div>
                             <div class="form-group">
-                                <label>Id Chức vụ</label>
-                                <input class="form-control" name="idCV" placeholder="Nhập chức vụ" />
+                                <label>Chức vụ</label>
+                                <select class="form-control" name="idCV">
+                                    @foreach($nhanvien as $nv)
+                                    <option value="{{$nv->idCV}}">{{$nv->chucvu->TenCV}}</option>
+                                    @endforeach
+                                </select>
+                            </div>       
+                            <div class="form-group">
+                                <label>Username</label>
+                                <select class="form-control" name="idUsers">
+                                    @foreach($nhanvien as $nv)
+                                    <option value="{{$nv->idUsers}}">{{$nv->users->username}}</option>
+                                    @endforeach
+                                </select>
                             </div>
                             <div class="form-group">
-                                <label>Id Users</label>
-                                <input class="form-control" name="idUsers" placeholder="Nhập id Users" />
+                                <label>Giới tính</label>
+                                <select class="form-control" name="GioiTinh" id="GioiTinh">                                   
+                                    <option value="Nam">Nam</option>
+                                    <option value="Nữ">Nữ</option>
+                                    <option value="Khác">Giới tính khác</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Tình trạng</label>
+                                <select class="form-control" name="TinhTrang" id="TinhTrang">                                   
+                                    <option value="Hoạt động">Hoạt động</option>
+                                    <option value="Không hoạt động">Không hoạt động</option>
+                                </select>
                             </div>
                             <button type="submit" class="btn btn-default">Thêm nhân viên</button>
                             <button type="reset" class="btn btn-default">Làm mới</button>

@@ -40,14 +40,6 @@
                                 </select>
                             </div>    
                             <div class="form-group">
-                                <label>Giới tính</label>
-                                <select class="form-control" name="gioitinh" id="gioitinh">                                   
-                                    <option value="Nam">Nam</option>
-                                    <option value="Nữ">Nữ</option>
-                                    <option value="Khác">Giới tính khác</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
                                 <label>Hình</label>
                                 <input type="file" name="urlHinh">
                             </div>                    

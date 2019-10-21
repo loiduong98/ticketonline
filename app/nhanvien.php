@@ -9,13 +9,14 @@ class nhanvien extends Model
     protected $table = "nhanvien";
     public $timestamps = false;
 
-    public function nv_tuyen()
+    public function users()
     {
-    	return $this->belongsTo('App\nv_tuyen','idNV','id');
+    	return $this->belongsTo('App\User','idUsers','id');
     }
 
-     public function lichsuve()
+     public function chucvu()
     {
-    	return $this->hasMany('App\lichsuve','idNV','id');
+    	return $this->belongsTo('App\chucvu','idCV','id');
     }
+    
 }

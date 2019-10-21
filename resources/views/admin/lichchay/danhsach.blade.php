@@ -16,8 +16,8 @@
                                 <th>Ngày khởi hành</th>
                                 <th>Giờ khởi hành</th>
                                 <th>Giá</th>
-                                <th>Id tuyến</th>
-                                <th>Id Xe</th>
+                                <th>Tên tuyến</th>
+                                <th>Sơ đồ ghế</th>
                                 <th>Xóa</th>
                                 <th>Sửa</th>
                             </tr>
@@ -29,8 +29,8 @@
                                 <td>{{$lc->NgayKhoiHanh}}</td>
                                 <td>{{$lc->GioKhoiHanh}}</td>
                                 <td>{{$lc->Gia}}</td>
-                                <td>{{$lc->idTuyen}}</td>
-                                <td>{{$lc->idXe}}</td>
+                                <td>{{$lc->tuyen->TenTuyen}}</td>
+                                <td>{{$lc->xe->idSoDoGhe}}</td>
                                 <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="admin/lichchay/xoa/{{$lc->id}}"> Xóa</a></td>
                                 <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="admin/lichchay/sua/{{$lc->id}}">Sửa</a></td>
                             </tr>

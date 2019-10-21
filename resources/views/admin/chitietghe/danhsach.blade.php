@@ -13,7 +13,7 @@
                         <thead>
                             <tr align="center">
                                 <th>ID chi tiết ghế</th>
-                                <th>ID sơ đồ ghế</th>
+                                <th>Sơ đồ ghế</th>
                                 <th>Tên ghế</th>
                                 <th>Xóa</th>
                                 <th>Sửa</th>
@@ -23,7 +23,7 @@
                             @foreach($chitietghe as $ctg)
                             <tr class="odd gradeX" align="center">
                                 <td>{{$ctg->id}}</td>
-                                <td>{{$ctg->idSoDoGhe}}</td>
+                                <td>{{$ctg->sodoghe->TenSoDo}}</td>
                                 <td>{{$ctg->TenGhe}}</td>
                                 <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="admin/chitietghe/xoa/{{$ctg->id}}"> Xóa</a></td>
                                 <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="admin/chitietghe/sua/{{$ctg->id}}">Sửa</a></td>

@@ -16,7 +16,6 @@
                                 <th>Username</th>
                                 <th>Password</th>
                                 <th>Group</th>
-                                <th>Giới tính</th>
                                 <th>Url Hình</th>                               
                                 <th>Xóa</th>
                                 <th>Sửa</th>
@@ -29,8 +28,7 @@
                                 <td>{{$us->username}}</td>
                                 <td>{{$us->password}}</td>
                                 <td>{{$us->idGroup}}</td>
-                                <td>{{$us->gioitinh}}</td>
-                                <td>{{$us->urlHinh}}</td>
+                                <td><img width="300px" height="300px" src="upload\users\{{$us->urlHinh}}" alt="" /></td>
                                 <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="admin/users/xoa/{{$us->id}}"> Xóa</a></td>
                                 <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="admin/users/sua/{{$us->id}}">Sửa</a></td>
                             </tr>

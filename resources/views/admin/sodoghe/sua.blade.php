@@ -38,6 +38,10 @@
                                 <label>Số cột</label>
                                 <input class="form-control" name="SoCot" placeholder="Nhập số cột" value="{{$sodoghe->SoCot}}"/>
                             </div>
+                            <div class="form-group">
+                                <label>Hình</label>
+                                <input type="file" name="UrlHinh">
+                            </div>
                             <button type="submit" class="btn btn-default">Sửa sơ đồ</button>
                             <button type="reset" class="btn btn-default">Làm mới</button>
                         <form>

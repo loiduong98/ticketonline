@@ -10,13 +10,17 @@ class ve extends Model
 
     public $timestamps = false;
 
-    public function lichsuve()
+    public function khachhang()
     {
-    	return $this->hasMany('App\lichsuve','idVe','id');
+    	return $this->belongsTo('App\khachhang','idKH','id');
     }
 
-    public function chitietve()
+    public function lichchay()
     {
-    	return $this->hasMany('App\chitietve','idVe','id');
+    	return $this->belongsTo('App\lichchay','idLC','id');
+    }
+    public function hoadon()
+    {
+    	return $this->belongsTo('App\hoadon','idHD','id');
     }
 }

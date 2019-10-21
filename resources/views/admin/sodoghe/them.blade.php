@@ -38,6 +38,10 @@
                                 <label>Số cột</label>
                                 <input class="form-control" name="SoCot" placeholder="Nhập số cột" />
                             </div>
+                            <div class="form-group">
+                                <label>Hình</label>
+                                <input type="file" name="UrlHinh">
+                            </div>
                             <button type="submit" class="btn btn-default">Thêm sơ đồ ghế</button>
                             <button type="reset" class="btn btn-default">Làm mới</button>
                         <form>

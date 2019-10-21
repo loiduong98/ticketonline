@@ -39,6 +39,27 @@ class SoDoGheController extends Controller
         $sodoghe->TenSoDo = $request->TenSoDo;
         $sodoghe->SoDong = $request->SoDong;
         $sodoghe->SoCot = $request->SoCot;
+        $sodoghe->UrlHinh = $request->UrlHinh;
+        if($request->hasFile('UrlHinh'))
+        {
+            $file = $request->file('UrlHinh');  
+
+            $name = $file->getClientOriginalName();
+            $UrlHinh = str_random(4)."_".$name;
+            while(file_exists("upload/sodoghe/".$UrlHinh))
+            {
+                $UrlHinh = str_random(4)."_".$name;
+            }
+            $file->move("upload/sodoghe",$UrlHinh);
+            $sodoghe->UrlHinh = $UrlHinh;
+            // $filename =  time() . '.jpg';
+    		// $filepath = public_path('upload/sodoghe');
+            //  $sodoghe->UrlHinh = $filename;
+        }
+        else
+        {
+            $sodoghe->UrlHinh = "";
+        }
         $sodoghe->save();
         return redirect('admin/sodoghe/them')->with('thongbao','Thêm thành công');
     }
@@ -54,7 +75,7 @@ class SoDoGheController extends Controller
         $sodoghe = sodoghe::find($id);
         $this->validate($request,
             [
-                'TenSoDo'=>'required|min:3|max:100|unique:sodoghe',
+                'TenSoDo'=>'required|min:3|max:100:sodoghe',
                 'SoDong'=>'required',
                 'SoCot'=>'required'
             ],
@@ -68,6 +89,27 @@ class SoDoGheController extends Controller
         $sodoghe->TenSoDo = $request->TenSoDo;
         $sodoghe->SoDong = $request->SoDong;
         $sodoghe->SoCot = $request->SoCot;
+        $sodoghe->UrlHinh = $request->UrlHinh;
+        if($request->hasFile('UrlHinh'))
+        {
+            $file = $request->file('UrlHinh');  
+
+            $name = $file->getClientOriginalName();
+            $UrlHinh = str_random(4)."_".$name;
+            while(file_exists("upload/sodoghe/".$UrlHinh))
+            {
+                $UrlHinh = str_random(4)."_".$name;
+            }
+            $file->move("upload/sodoghe",$UrlHinh);
+            $sodoghe->UrlHinh = $UrlHinh;
+            // $filename =  time() . '.jpg';
+    		// $filepath = public_path('upload/sodoghe');
+            //  $sodoghe->UrlHinh = $filename;
+        }
+        else
+        {
+            $sodoghe->UrlHinh = "";
+        }
         $sodoghe->save();
         return redirect('admin/sodoghe/sua/'.$id)->with('thongbao','Sửa thành công');
     }

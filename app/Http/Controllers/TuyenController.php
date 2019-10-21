@@ -10,7 +10,6 @@ class TuyenController extends Controller
 {
     public function getDanhSach()
     {
-
     	$tuyen = tuyen::orderBy('id','DESC')->get();
     	return view('admin.tuyen.danhsach', ['tuyen'=>$tuyen]);
     }
@@ -27,12 +26,14 @@ class TuyenController extends Controller
         $this->validate($request,
             [
                 // 'TenTuyen'=>'required|min:3|max:100|unique:tuyen',
+                'TenTuyen'=>'unique:tuyen',
                 'idBenDi'=>'required',
                 'idBenDen'=>'required'
             ],
             [
                 'idBenDi.required'=>'Bạn chưa chọn điểm đi',
-                'idBenDen.required'=>'Bạn chưa chọn điểm đến'
+                'idBenDen.required'=>'Bạn chưa chọn điểm đến',
+                'TenTuyen.unique'=>'Tên tuyến đã tồn tại'
                 // 'TenTuyen.required'=>'Bạn chưa nhập tên tuyến',
                 // 'TenTuyen.min'=>'Tên tuyến quá ngắn',
                 // 'TenTuyen.max'=>'Tên tuyến quá dài'
@@ -69,8 +70,8 @@ class TuyenController extends Controller
             'TenTuyen.max'=>'Tên tuyến quá dài'
         ]);
             $tuyen->TenTuyen = $request->TenTuyen;
-            $tuyen->idBenDi = $request->idBenDi;
-            $tuyen->idBenDen = $request->idBenDen;
+            $tuyen->idBenDi = $request->ben;
+            $tuyen->idBenDen = $request->ben;
             $tuyen->save();
         return redirect('admin/tuyen/sua/'.$id)->with('thongbao','Sửa thành công');
     }

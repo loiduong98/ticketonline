@@ -9,12 +9,12 @@ class lichchay extends Model
     protected $table = "lichchay";
     public $timestamps = false;
 
-    public function ve()
+    public function xe()
     {
-    	return $this->hasMany('App\ve','idVe','id');
+    	return $this->belongsTo('App\xe','idXe','id');
     }
     public function tuyen()
     {
-    	return $this->hasMany('App\tuyen','idTuyen','id');
+    	return $this->belongsTo('App\tuyen','idTuyen','id');
     }
 }

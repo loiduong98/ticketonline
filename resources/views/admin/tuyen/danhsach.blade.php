@@ -23,8 +23,8 @@
                             <tr class="odd gradeX" align="center">
                                 <td>{{$t->id}}</td>                               
                                 <td>{{$t->TenTuyen}}</td>
-                                <td>{{$t->idBenDi}}</td>
-                                <td>{{$t->idBenDen}}</td>                               
+                                <td>{{$t->ben->TenBen}}</td>
+                                <td>{{$t->ben1->TenBen}}</td>                               
                                 <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="admin/tuyen/xoa/{{$t->id}}"> Xóa</a></td>
                                 <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="admin/tuyen/sua/{{$t->id}}">Sửa</a></td>
                             </tr>

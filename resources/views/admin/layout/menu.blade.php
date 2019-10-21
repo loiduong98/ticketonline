@@ -54,13 +54,13 @@
                         </li>
                         
                         <li>
-                            <a href="#"><i class="glyphicon glyphicon-user"></i> User<span class="fa arrow"></span></a>
+                            <a href="#"><i class="glyphicon glyphicon-user"></i> Tài khoản<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="admin/users/danhsach">Danh sách User</a>
+                                    <a href="admin/users/danhsach">Danh sách tài khoản</a>
                                 </li>
                                 <li>
-                                    <a href="admin/users/them">Thêm User</a>
+                                    <a href="admin/users/them">Thêm tài khoản</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->

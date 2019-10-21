@@ -28,11 +28,9 @@ class UsersController extends Controller
                 'username'=>'required|min:3|max:100|unique:users',
                 'password'=>'required|min:3|max:100|unique:users',
                 'idGroup'=>'required',
-                'gioitinh'=>'required'
             ],
             [
                 'idGroup.required'=>'Bạn chưa chọn group',
-                'gioitinh.required'=>'Bạn chưa chọn giới tính',
                 'username.required'=>'Bạn chưa nhập username',
                 'username.min'=>'Username quá ngắn',
                 'username.max'=>'Username quá dài',
@@ -44,7 +42,6 @@ class UsersController extends Controller
         $users->username = $request->username;
         $users->password = bcrypt($request->password);
         $users->idGroup = $request->idGroup;
-        $users->gioitinh = $request->gioitinh;
         if($request->hasFile('urlHinh'))
         {
             $file = $request->file('urlHinh');  
@@ -83,11 +80,9 @@ class UsersController extends Controller
                 'username'=>'required|min:3|max:100:users',
                 'password'=>'required|min:3|max:100:users',
                 'idGroup'=>'required',
-                'gioitinh'=>'required'
             ],
             [
-                'idGroup.required'=>'Bạn chưa chọn group',
-                'gioitinh.required'=>'Bạn chưa chọn giới tính',
+                'idGroup.required'=>'Bạn chưa chọn group',               
                 'username.required'=>'Bạn chưa nhập username',
                 'username.min'=>'Username quá ngắn',
                 'username.max'=>'Username quá dài',
@@ -98,7 +93,6 @@ class UsersController extends Controller
         $users->username = $request->username;
         $users->password = bcrypt($request->password);
         $users->idGroup = $request->idGroup;
-        $users->gioitinh = $request->gioitinh;
         if($request->hasFile('urlHinh'))
         {
             $file = $request->file('urlHinh');  

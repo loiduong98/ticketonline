@@ -14,7 +14,7 @@
                             <tr align="center">
                                 <th>ID</th>
                                 <th>Ngày đặt vé</th>
-                                <th>ID khách hàng</th>
+                                <th>Tên khách hàng</th>
                                 <th>ID lịch chạy</th>
                                 <th>ID hóa đơn</th>
                                 <th>Xóa</th>
@@ -26,7 +26,7 @@
                             <tr class="odd gradeX" align="center">
                                 <td>{{$v->id}}</td>
                                 <td>{{$v->NgayDatVe}}</td>
-                                <td>{{$v->idKH}}</td>
+                                <td>{{$v->khachhang->HoTen}}</td>
                                 <td>{{$v->idLC}}</td>
                                 <td>{{$v->idHD}}</td>
                                 <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="admin/ve/xoa/{{$v->id}}"> Xóa</a></td>

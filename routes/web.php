@@ -232,18 +232,18 @@ Route::get('page/index','PageController@getLayout');
 Route::group(['prefix'=>'page'], function(){
 	Route::group(['prefix'=>'checkout'], function(){
 		Route::get('1','DatVeController@getTT1');
-		Route::post('1','DatVeController@postTT1');
+		// Route::post('1','DatVeController@postTT1');
 
 		Route::get('2','DatVeController@getTT2');
-		Route::post('2','DatVeController@postTT2');
+		// Route::post('2','DatVeController@postTT2');
 		
 		Route::get('3','DatVeController@getTT3');
-		Route::post('3','DatVeController@postTT3');
+		// Route::post('3','DatVeController@postTT3');
 
 		Route::get('4','DatVeController@getTT4');
 		Route::post('4','DatVeController@postTT4');
 
-		Route::get('datvethanhcong','DatVeController@getDVTC');
+		// Route::get('datvethanhcong','DatVeController@getDVTC');
 	});
 });
 

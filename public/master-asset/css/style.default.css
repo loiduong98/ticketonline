@@ -3375,6 +3375,7 @@ h3,
 .h3 {
   margin-top: 20px;
   margin-bottom: 20px;
+  padding-left: 50px;
 }
 p {
   margin: 0 0 10px;
