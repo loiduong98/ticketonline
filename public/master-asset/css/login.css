@@ -1,0 +1,119 @@
+.btn-support {
+    margin-top: 20px;
+    font-size: 1.4em;
+}
+
+.btn-flat {
+    position: relative;
+    padding-left: 45px;
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+}
+
+.btn-support .icon-flat {
+    padding: 10px 12px;
+}
+
+.icon-flat {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+
+.row {
+    margin-top: 20px;
+}
+
+#login-page #body-login .border {
+    padding: 20px 10px;
+}
+
+
+/* footer  */
+
+.footer-bg {
+    color: #fff;
+}
+
+.block-footer {
+    padding: 20px 0;
+    background: #07589a;
+}
+
+.block-footer .title {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.lh2-ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.block-footer ul li a {
+    padding: 5px 0;
+    border-bottom: solid 1px rgba(235, 235, 235, 0.3);
+    display: block;
+    color: #fff;
+}
+
+.block-footer input {
+    border-radius: 3px 0 0 3px;
+    float: left;
+    width: calc(100% - 35px);
+    height: 35px;
+    line-height: 35px;
+    padding: 0 15px;
+    color: #fff;
+    background: none;
+    border: solid 1px rgba(235, 235, 235, 0.3);
+}
+
+.block-footer button {
+    width: 35px;
+    border: none;
+    background: #0b76ce;
+    height: 35px;
+    color: #fff;
+    border-radius: 0 3px 3px 0;
+}
+
+
+/* back top top */
+
+#bttop {
+    border: 1px solid #4adcff;
+    background: rgba(3, 79, 142, 0.7);
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 36px;
+    position: fixed;
+    bottom: 35px;
+    right: 10px;
+    cursor: pointer;
+    display: none;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 900;
+    border-radius: 50%;
+}
+
+#bttop:hover {
+    border: 1px solid #ffa789;
+    background: #333333;
+    transition-duration: 1s;
+}

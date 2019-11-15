@@ -1,43 +1,31 @@
-        <header>
-
-            <!-- *** TOP ***
-_________________________________________________________ -->
-            <div id="top">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xs-5 contact">
-                            <p class="hidden-sm hidden-xs">Contact us on +77 402 5807 or loiduong0511@gmail.com.</p>
-                            <p class="hidden-md hidden-lg"><a href="#" data-animate-hover="pulse"><i class="fa fa-phone"></i></a>  <a href="#" data-animate-hover="pulse"><i class="fa fa-envelope"></i></a>
-                            </p>
-                        </div>
-                        <div class="col-xs-7">
-                            <div class="social">
-                                <a href="#" class="external facebook" data-animate-hover="pulse"><i class="fa fa-facebook"></i></a>
-                                <a href="#" class="external gplus" data-animate-hover="pulse"><i class="fa fa-google-plus"></i></a>
-                                <a href="#" class="external twitter" data-animate-hover="pulse"><i class="fa fa-twitter"></i></a>
-                                <a href="#" class="email" data-animate-hover="pulse"><i class="fa fa-envelope"></i></a>
-                            </div>
-
-                            <div class="login">
-                                <a href="#" data-toggle="modal" data-target="#login-modal"><i class="fa fa-sign-in"></i> <span class="hidden-xs text-uppercase">Sign in</span></a>
-                                <a href="customer-register.html"><i class="fa fa-user"></i> <span class="hidden-xs text-uppercase">Sign up</span></a>
-                            </div>
-
-                        </div>
-                    </div>
+<header>
+        <nav class="navbar navbar-expand-sm navbar-light bg-info">
+            <div class="container">
+                <a class="navbar-brand" href="page/index">Lợi Dương Travel</a>
+                <button class="navbar-toggler" data-toggle="collapse" data-target="#menuNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="menuNav">
+                    <ul class="navbar-nav m-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Trang Chủ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="master-asset/login.html">Đăng Nhập</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="master-asset/contact.html">Liên Hệ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="master-asset/new.html">Tin Tức</a>
+                        </li>
+                    </ul>
+                    <!--form tìm kiếm-->
+                    <form class="form-inline">
+                        <input class="form-control mr-2" placeholder="Tìm Kiếm">
+                        <button class="btn btn-outline-light">Search</button>
+                    </form>
                 </div>
             </div>
-
-            <!-- *** TOP END *** -->
-
-            <!-- *** NAVBAR ***
-    _________________________________________________________ -->
-
-        @include('page.layout.menu')
-
-            <!-- *** NAVBAR END *** -->
-
-        </header>
-
-        <!-- *** LOGIN MODAL ***
-_________________________________________________________ -->
+        </nav>
+    </header>

@@ -1,0 +1,32 @@
+.parent__register,
+.border {
+    padding: 20px;
+}
+
+
+/* back top top */
+
+#bttop {
+    border: 1px solid #4adcff;
+    background: rgba(3, 79, 142, 0.7);
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 36px;
+    position: fixed;
+    bottom: 35px;
+    right: 10px;
+    cursor: pointer;
+    display: none;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 900;
+    border-radius: 50%;
+}
+
+#bttop:hover {
+    border: 1px solid #ffa789;
+    background: #333333;
+    transition-duration: 1s;
+}

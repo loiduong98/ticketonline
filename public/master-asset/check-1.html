@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <base href="{{asset('')}}">
+    <title>Chọn tuyến</title>
 
     <!--Font Google-->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700&display=swap" rel="stylesheet">
@@ -29,26 +28,23 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-light bg-info">
             <div class="container">
-                <a class="navbar-brand" href="#">TICKET</a>
+                <a class="navbar-brand" href="./index.html">TICKET</a>
                 <button class="navbar-toggler" data-toggle="collapse" data-target="#menuNav">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="menuNav">
                     <ul class="navbar-nav m-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Trang Chủ</a>
+                            <a class="nav-link" href="./index.html">Trang Chủ</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Đăng Nhập</a>
+                            <a class="nav-link" href="./login.html">Đăng Nhập</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Đăng Kí</a>
+                            <a class="nav-link" href="./contact.html">Liên Hệ</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Liên Hệ</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Tin Tức</a>
+                            <a class="nav-link" href="./new.html">Tin Tức</a>
                         </li>
                     </ul>
                     <!--form tìm kiếm-->
@@ -69,13 +65,13 @@
                     <div class="box">
                         <form method="post" action="check-1.html">
                             <ul class="nav nav-pills nav-justified">
-                                <li class="active"><a href="check-1.html"><i class="fa fa-map-marker"></i><br>CHỌN TUYẾN</a>
+                                <li class="active"><a href="#"><i class="fa fa-map-marker"></i><br>CHỌN TUYẾN</a>
                                 </li>
-                                <li class="disabled"><a href="check-2.html"><i class="fa fa-truck"></i><br>CHỌN GHẾ</a>
+                                <li class="disabled"><a href="./check-2.html"><i class="fa fa-truck"></i><br>CHỌN GHẾ</a>
                                 </li>
-                                <li class="disabled"><a href="check-3.html"><i class="fa fa-truck"></i><br>THÔNG TIN KHÁCH HÀNG</a>
+                                <li class="disabled"><a href="./check-3.html"><i class="fa fa-truck"></i><br>THÔNG TIN KHÁCH HÀNG</a>
                                 </li>
-                                <li class="disabled"><a href="check-4.html"><i class="fa fa-eye"></i><br>THANH TOÁN</a>
+                                <li class="disabled"><a href="./check-4.html"><i class="fa fa-eye"></i><br>THANH TOÁN</a>
                                 </li>
                             </ul>
                         </form>
@@ -97,11 +93,11 @@
                                                 <label for="#">Điểm Khởi Hành</label>
                                                 <div class="controls">
                                                     <i class="fa fa-bus text-primary"></i>
-                                                    <select name="idBenDi" id="idBenDi" class="form-control selectpicker bs-select-hideden">
-                                                            <option value="4">Cần Thơ</option>
-                                                            <option value="1">TP Hồ Chí Minh</option>
-                                                            <option value="2">Đà Lạt</option>
-                                                        </select>
+                                                    <select name="" id="slStart" class="form-control selectpicker bs-select-hideden">
+                                                        <option value="CANTHO">Cần Thơ</option>
+                                                        <option value="TPHCM">TP Hồ Chí Minh</option>
+                                                        <option value="DALAT">Đà Lạt</option>
+                                                    </select>
                                                 </div>
                                             </div>
                                         </div>
@@ -110,25 +106,25 @@
                                                 <label for="#">Điểm Đến</label>
                                                 <div class="controls">
                                                     <i class="fa fa-bus text-primary"></i>
-                                                    <select name="idBenDen" id="idBenDen" class="form-controls selectpicker bs-select-hideden">
-                                                                <option value="4">Cần Thơ</option>
-                                                                <option value="1">TP Hồ Chí Minh</option>
-                                                                <option value="2">Đà Lạt</option>
+                                                    <select name="" id="slEnd" class="form-control selectpicker bs-select-hideden">
+                                                        <option value="CANTHO">Cần Thơ</option>
+                                                        <option value="TPHCM">TP Hồ Chí Minh</option>
+                                                        <option value="DALAT">Đà Lạt</option>
                                                     </select>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <!-- <div class="row">
+                                    <div class="row">
                                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-ms-12">
                                             <div class="form-group">
                                                 <label for="#">Ngày Khơi Hành</label>
                                                 <div class="controls">
                                                     <i class="fa fa-clock-o text-primary" aria-hidden="true"></i>
-                                                    <input id="datepicker" name="dDate" placeholder="dd/mm/yyyy" class="form-control dDate date-readonly " type="date">
+                                                    <input id="datepicker" name="dDate" class="form-control dDate date-readonly " type="date">
                                                     <small>
-                                                                <em>Định dạng: dd-mm-yyyy</em>
-                                                        </small>
+                                                        <em>Định dạng: dd-mm-yyyy</em>
+                                                    </small>
                                                 </div>
                                             </div>
                                         </div>
@@ -137,39 +133,75 @@
                                                 <label for="#">Số Lượng Vé</label>
                                                 <div class="controls">
                                                     <i class="fa fa-ticket" aria-hidden="true"></i>
-                                                    <input type="number" name="numOfTicket" placeholder="1" value="1" class="form-control" min="1" max="10">
+                                                    <input id="txtAmount" type="number" name="numOfTicket" placeholder="1" value="1" class="form-control" min="1" max="10">
                                                 </div>
                                             </div>
                                         </div>
-                                    </div> -->
-                                    <!-- <div class="row">
+                                    </div>
+                                    <div class="row">
                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-ms-12">
                                             <a href="./index.html" ng-click="prev()" class="btn btn-primary btn-flat"><i class="fa fa-arrow-left icon-flat bg-btn-actived"></i> Quay lại</a>
-                                            <a href="./check-2.html" ng-click="prev()" class="btn btn-primary btn-flat"><i class="fa fa-arrow-right icon-flat bg-btn-actived"></i> Tiếp Tục</a>
-
+                                            <a href="./check-2.html" id="btnNext" ng-click="prev()" class="btn btn-primary btn-flat"><i class="fa fa-arrow-right icon-flat bg-btn-actived"></i> Tiếp Tục</a>
                                         </div>
-                                    </div> -->
-                                    <div class="row">
-                                            <div class="pull-left">
-                                                <a href="page/index" class="btn btn-default"><i class="fa fa-chevron-left"></i> Quay lại</a>
-                                            </div>
-                                            <div class="pull-right">
-                                                <button type="submit" class="btn btn-template-main"><a href="./check-2.html">Tiếp tục</a><i class="fa fa-chevron-right"></i>
-                                                </button>
-                                            </div>
                                     </div>
                                 </form>
                             </table>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 col-ms-12 pt-1">
-                    <img src="./img/Thong-cao-Khai-Truong-Phan-Rang-BXMĐ.png" alt="">
+                <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 col-ms-12">
+                    <img src="./img/nen-xam.jpg" alt="">
                 </div>
             </div>
         </div>
     </section>
 
+
+    <!--footer-->
+    <section class="footer-bg">
+        <div class="block-footer bg-info">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-12 item">
+                        <p class="title">GIỚI THIỆU</p>
+                        <p class="caption">STICK là dịch vụ đặt vé xe online</p>
+                        <ul class="lh2-ul">
+                            <li><i class="fas fa-map-marker-alt"></i>Khu công nghệ cao Q9</li>
+                            <li><i class="fas fa-phone"></i>1900 1234</li>
+                            <li><i class="fas fa-envelope"></i> Email: stickonline@gmail.com</li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-12 item">
+                        <p class="title">Hỗ trợ khách hàng</p>
+                        <ul class="lh2-ul">
+                            <li><a href="">Liên hệ với chúng tôi</a></li>
+                            <li><a href="">Câu hỏi thường gặp</a></li>
+                            <li><a href="">Điều khoản và chính sách</a></li>
+                            <li><a href="">Chăm sóc khách hàng</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-12 item">
+                        <p class="title">DỊCH VỤ</p>
+                        <ul class="lh2-ul">
+                            <li><a href="">Thuê xe du lịch</a></li>
+                            <li><a href="">Thuê xe du lịch</a></li>
+                            <li><a href="">Thuê xe du lịch</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-12 item">
+                        <p class="title">GỬI LIÊN HỆ</p>
+                        <p>Liên hệ ngay với chúng tôi để nhận được những ưu đãi mới nhất</p>
+                        <input type="" name="" placeholder="Nhập email của bạn">
+                        <button type="">Gửi</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--backtotop-->
+    <a class="btn-top" id="bttop" href="javascript:void(0);" title="Top" style="display: inline;"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>
 
 
 
@@ -177,6 +209,10 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="./JS/index.js"></script>
+    <!--Javascript-->
+    <script src="./JS/jquery.min.js"></script>
+    <script src="./JS/main.js"></script>
 </body>
 
 </html>

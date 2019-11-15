@@ -17,40 +17,31 @@ class Cart
 	}
 
 	public function add($item, $id){
-		if($item->promotion_price == 0){
-			$giohang = ['soluong'=>0, 'gia' => $item->unit_price, 'item' => $item];
-		}
-		else{
-			$giohang = ['soluong'=>0, 'gia' => $item->promotion_price, 'item' => $item];
-		}
+		
+		$chitietve = ['SoLuong'=>0, 'Gia' => $item->Gia, 'item' => $item];
+		
 		if($this->items){
 			if(array_key_exists($id, $this->items)){
-				$giohang = $this->items[$id];
+				$chitietve = $this->items[$id];
 			}
 		}
-		$giohang['soluong']++;
-		if($item->promotion_price == 0){
-			$giohang['gia'] = $item->unit_price * $giohang['soluong'];
-		}
-		else{
-			$giohang['gia'] = $item->promotion_price * $giohang['soluong'];
-		}
-		$this->items[$id] = $giohang;
+		$chitietve['SoLuong']++;
+		
+		$chitietve['Gia'] = $item->Gia * $chitietve['SoLuong'];
+		
+		
+		$this->items[$id] = $chitietve;
 		$this->totalQty++;
-		if($item->promotion_price == 0){
-			$this->totalPrice += $item->unit_price;
-		}
-		else{
-			$this->totalPrice += $item->promotion_price;
-		}
+
+		$this->totalPrice += $item->Gia;
 		
 	}
 	//xóa 1
 	public function reduceByOne($id){
 		$this->items[$id]['qty']--;
-		$this->items[$id]['gia'] -= $this->items[$id]['item']['gia'];
+		$this->items[$id]['Gia'] -= $this->items[$id]['item']['Gia'];
 		$this->totalQty--;
-		$this->totalPrice -= $this->items[$id]['item']['gia'];
+		$this->totalPrice -= $this->items[$id]['item']['Gia'];
 		if($this->items[$id]['qty']<=0){
 			unset($this->items[$id]);
 		}
@@ -58,7 +49,7 @@ class Cart
 	//xóa nhiều
 	public function removeItem($id){
 		$this->totalQty -= $this->items[$id]['qty'];
-		$this->totalPrice -= $this->items[$id]['gia'];
+		$this->totalPrice -= $this->items[$id]['Gia'];
 		unset($this->items[$id]);
 	}
 }

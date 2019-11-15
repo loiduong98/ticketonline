@@ -46,8 +46,12 @@
                             </div>
                             <div class="form-group">
                                 <label>Chức vụ</label>
-                                <input class="form-control" name="idCV" placeholder="Chức vụ" value="{{$nhanvien->chucvu->TenCV}}"/>
-                            </div>
+                                <select class="form-control" name="idCV">
+                                    @foreach($chucvu as $cv)
+                                    <option value="{{$cv->id}}">{{$cv->TenCV}}</option>
+                                    @endforeach
+                                </select>
+                            </div>       
                             <div class="form-group">
                                 <label>Usersname</label>
                                 <input class="form-control" name="idUsers" placeholder="Usersname" value="{{$nhanvien->users->username}}"/>

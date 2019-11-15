@@ -40,7 +40,7 @@ class UsersController extends Controller
             ]);
         $users = new User;
         $users->username = $request->username;
-        $users->password = bcrypt($request->password);
+        $users->password = md5($request->password);
         $users->idGroup = $request->idGroup;
         if($request->hasFile('urlHinh'))
         {
@@ -91,7 +91,7 @@ class UsersController extends Controller
                 'password.max'=>'password quá dài'
             ]);
         $users->username = $request->username;
-        $users->password = bcrypt($request->password);
+        $users->password = md5($request->password);
         $users->idGroup = $request->idGroup;
         if($request->hasFile('urlHinh'))
         {
@@ -122,5 +122,29 @@ class UsersController extends Controller
         $users = User::find($id);
         $users->delete();
         return redirect('admin/users/danhsach')->with('thongbao','Xóa thành công');
+    }
+    public function getLogin()
+    {
+        return view('login');
+    }
+    public function postLogin(Request $request)
+    {
+        $arr = [
+            'username'=>$request->$username,
+            'password'=>$request->$password,       
+        ];
+        if(Auth::attempt($arr))
+        {            
+            return redirect('admin/index');
+        }else
+        {
+            return redirect('admin/login');
+        }
+        
+    }
+    public function getLogout()
+    {
+        Auth::logout();
+        return redirect('admin.login');
     }
 }

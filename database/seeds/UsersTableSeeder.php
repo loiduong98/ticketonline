@@ -11,19 +11,18 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        for($i = 1; $i <= 10;$i++)
-        {
+        // for($i = 1; $i <= 10;$i++)
+        // {
         	DB::table('users')->insert(
 	        	[
-	        		'username' => 'User_'.$i,
-                    'password' => bcrypt('123456'),	            	
-                    'idGroup'=> 0,
-                    'gioitinh'=> 0,
+	        		'username' => 'tanloi',
+                    'password' => md5('123456'),	            	
+                    'idGroup'=> 0,                    
                     'urlHinh'=> 0,
                     'remember_token'=> '',           
 	            	'created_at' => new DateTime()
 	        	]
         	);
-        }
+        // }
     }
 }

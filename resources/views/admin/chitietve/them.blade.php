@@ -4,7 +4,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="page-header">Chi tiết ghế
+                        <h1 class="page-header">Chi tiết vé
                             <small>thêm</small>
                         </h1>
                     </div>
@@ -22,17 +22,29 @@
                                 {{session('thongbao')}}
                             </div>
                         @endif
-                        <form action="admin/chitietghe/them" method="POST" enctype="multipart/form-data">
+                        <form action="admin/chitietve/them" method="POST" enctype="multipart/form-data">
                              <input type="hidden" name="_token" value="{{csrf_token()}}" />
                             <div class="form-group">
-                                <label>ID sơ đồ ghế</label>
-                                <input class="form-control" name="idSoDoGhe" placeholder="Nhập ID sơ đồ ghế" />
+                                <label>ID vé</label>
+                                <input class="form-control" name="idVe" placeholder="Nhập ID vé" />
                             </div>
                             <div class="form-group">
-                                <label>Tên ghế</label>
-                                <input class="form-control" name="TenGhe" placeholder="Nhập Tên ghế" />
+                                <label>ID ghế</label>
+                                <input class="form-control" name="idGhe" placeholder="Nhập ID ghế" />
                             </div>
-                            <button type="submit" class="btn btn-default">Thêm chi tiết ghế</button>
+                            <div class="form-group">
+                                <label>Gia</label>
+                                <input class="form-control" name="Gia" placeholder="Nhập giá" />
+                            </div>
+                            <div class="form-group">
+                                <label>Số lượng</label>
+                                <input class="form-control" name="SoLuong" placeholder="Nhập SL" />
+                            </div>
+                            <div class="form-group">
+                                <label>Mã bí mật</label>
+                                <input class="form-control" name="MaBiMat" placeholder="Nhập SL" />
+                            </div>
+                            <button type="submit" class="btn btn-default">Thêm chi tiết vé</button>
                             <button type="reset" class="btn btn-default">Làm mới</button>
                         <form>
                     </div>

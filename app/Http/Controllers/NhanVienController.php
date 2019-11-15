@@ -72,7 +72,7 @@ class NhanVienController extends Controller
         $nhanvien = nhanvien::find($id);
         $chucvu = chucvu::all();
         $users = User::all();
-    	return view('admin.nhanvien.sua',['nhanvien'=>$nhanvien]);
+    	return view('admin.nhanvien.sua',['nhanvien'=>$nhanvien],['chucvu'=>$chucvu]);
     }
 
     public function postSua(Request $request,$id)

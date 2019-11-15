@@ -8,8 +8,8 @@ class chitietve extends Model
 {
     protected $table = "chitietve";
     public $timestamps = false;
-    public function sodoghe()
+    public function chitietghe()
     {
-    	return $this->belongsTo('App\sodoghe','idSoDoGhe','id');
+    	return $this->belongsTo('App\chitietghe','idGhe','id');
     }
 }

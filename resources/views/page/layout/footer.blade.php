@@ -1,28 +1,40 @@
-<style>
-	#footer .photostream div {width:16.5%;}
-</style>
-<footer id="footer">
+<section class="footer-bg">
+        <div class="block-footer bg-info">
             <div class="container">
-                <div class="col-md-3 col-sm-6">
-                    <h4>Về chúng tôi</h4>
-
-                    <p>Đặt vé online tiện lợi không cần phải đến nhà xe nhận vé</p>
-
-                    <hr>
-                    <hr class="hidden-md hidden-lg hidden-sm">
-
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-12 item">
+                        <p class="title">GIỚI THIỆU</p>
+                        <p class="caption">TICKETONLINE là dịch vụ đặt vé xe online</p>
+                        <ul class="lh2-ul">
+                            <li><i class="fas fa-map-marker-alt"></i>Khu công nghệ cao Q9</li>
+                            <li><i class="fas fa-phone"></i>1900 1234</li>
+                            <li><i class="fas fa-envelope"></i> Email: ticketonline@gmail.com</li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-12 item">
+                        <p class="title">Hỗ trợ khách hàng</p>
+                        <ul class="lh2-ul">
+                            <li><a href="">Liên hệ với chúng tôi</a></li>
+                            <li><a href="">Câu hỏi thường gặp</a></li>
+                            <li><a href="">Điều khoản và chính sách</a></li>
+                            <li><a href="">Chăm sóc khách hàng</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-12 item">
+                        <p class="title">DỊCH VỤ</p>
+                        <ul class="lh2-ul">
+                            <li><a href="">Booking khách sạn</a></li>
+                            <li><a href="">Booking khách sạn</a></li>
+                            <li><a href="">Booking khách sạn</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-12 item">
+                        <p class="title">GỬI LIÊN HỆ</p>
+                        <p>Liên hệ ngay với chúng tôi để nhận được những ưu đãi mới nhất</p>
+                        <input type="" name="" placeholder="Nhập email của bạn">
+                        <button type="">Gửi</button>
+                    </div>
                 </div>
-                <!-- /.col-md-3 -->
-                <div class="col-md-3 col-sm-6">
-
-                    <h4>Liên hệ</h4>
-
-                    <p><strong>Booking Ticket Online </strong>
-					<br>Lanmark 81<br>quận Bình Thạnh <br>Thành phố Hồ Chí Minh
-					<br>Việt Nam <br> <strong>Mời quý khách</strong>
-					</p>
-                </div>
-                <!-- /.col-md-3 -->
             </div>
-            <!-- /.container -->
-        </footer>
+        </div>
+    </section>
