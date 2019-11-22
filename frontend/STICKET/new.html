@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tin tức</title>
+
+    <!--Font Google-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700&display=swap" rel="stylesheet">
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <!--bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!--CSS-->
+    <link rel="stylesheet" href="./CSS/style.css">
+    <!--[if lt IE 9]>
+     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+     <![endif]-->
+</head>
+
+<body>
+
+    <!-- header -->
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-light bg-info">
+            <div class="container">
+                <a class="navbar-brand" href="./index.html">TICKET</a>
+                <button class="navbar-toggler" data-toggle="collapse" data-target="#menuNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="menuNav">
+                    <ul class="navbar-nav m-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="./index.html">Trang Chủ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./login.html">Đăng Nhập</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./contact.html">Liên Hệ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./new.html">Tin Tức</a>
+                        </li>
+                    </ul>
+                    <!--form tìm kiếm-->
+                    <form class="form-inline">
+                        <input class="form-control mr-2" placeholder="Tìm Kiếm">
+                        <button class="btn btn-outline-light">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!--New-->
+    <div class="module-news">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9">
+                    <div class="item-news">
+                        <div class="row">
+                            <div class="col-4 img">
+                                <a href="./new-detail.html">
+                                    <img class="img-fluid lh2-img" src="./img/new-1.jpg" alt="">
+                                </a>
+                            </div>
+                            <div class="col-8 text">
+                                <a href="./new-detail.html">CÙNG TRẺ EM ỨNG PHÓ THIÊN TAI</a>
+                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam consequatur iste molestias asperiores doloremque ex quia commodi molestiae, alias distinctio obcaecati totam minima at consequuntur magni accusantium nihil.
+                                    Adipisci expedita porro error non temporibus doloribus soluta saepe nulla quis illo!</p>
+                                <div class="lh2-date"><i class="fas fa-calendar-alt"></i> 28/10/2019</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end item -->
+                    <div class="item-news">
+                        <div class="row">
+                            <div class="col-4 img">
+                                <a href="./new-detail.html">
+                                    <img class="img-fluid lh2-img" src="./img/new-2.jpg" alt="">
+                                </a>
+                            </div>
+                            <div class="col-8 text">
+                                <a href="./new-detail.html">DOANH NGHIỆP TRÁCH NHIỆM VÌ CỘNG ĐỒNG</a>
+                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque ipsam fugiat velit odio eligendi accusantium minus impedit expedita esse assumenda nulla unde tenetur odit ullam omnis tempore iure incidunt, mollitia
+                                    repellendus dolore distinctio vero eius. Adipisci, eum. Perferendis, reiciendis eligendi?</p>
+                                <div class="lh2-date"><i class="fas fa-calendar-alt"></i> 28/10/2019</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end item -->
+                    <div class="lh2-pagging col-12">
+                        <ul class="pagination">
+                            <li class="page-item"><a class="page-link" href="#"><i class="fas fa-step-backward"></i></a></li>
+                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item"><a class="page-link" href="#"><i class="fas fa-step-forward"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 d-none d-lg-block">
+                    <div class="box-contact">
+                        <p class="title-sidebar"><i class="fas fa-bars"></i>Hỗ trợ trực tuyến</p>
+                        <div class="box-border">
+                            <ul class="lh2-ul">
+                                <li>Hotline: 1900 1234</li>
+                                <li>Email: stickonline@gmail.com</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="box-hightlight-news">
+                        <p class="title-sidebar"><i class="fas fa-bars"></i>Tin nỗi bật</p>
+                        <div class="box-border">
+                            <div class="list-news">
+                                <a class="img" href="./new-detail.html"><img class="img-fluid lh2-img" src="./img/new-1.jpg" alt=""></a>
+                                <div class="right-list">
+                                    <a href="./new-detail.html">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem, suscipit.</a>
+                                    <div class="lh2-date"><i class="fas fa-calendar-alt"></i> 28/10/2019</div>
+                                </div>
+                            </div>
+                            <!-- end item -->
+                            <div class="list-news">
+                                <a class="img" href="./new-detail.html"><img class="img-fluid lh2-img" src="./img/new-1.jpg" alt=""></a>
+                                <div class="right-list">
+                                    <a href="./new-detail.html">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem, suscipit.</a>
+                                    <div class="lh2-date"><i class="fas fa-calendar-alt"></i> 28/10/2019</div>
+                                </div>
+                            </div>
+                            <!-- end item -->
+                            <div class="list-news">
+                                <a class="img" href="./new-detail.html"><img class="img-fluid lh2-img" src="./img/new-1.jpg" alt=""></a>
+                                <div class="right-list">
+                                    <a href="./new-detail.html">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem, suscipit.</a>
+                                    <div class="lh2-date"><i class="fas fa-calendar-alt"></i> 28/10/2019</div>
+                                </div>
+                            </div>
+                            <!-- end item -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!--footer-->
+    <section class="footer-bg">
+        <div class="block-footer bg-info">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-12 item">
+                        <p class="title">GIỚI THIỆU</p>
+                        <p class="caption">STICK là dịch vụ đặt vé xe online</p>
+                        <ul class="lh2-ul">
+                            <li><i class="fas fa-map-marker-alt"></i>Khu công nghệ cao Q9</li>
+                            <li><i class="fas fa-phone"></i>1900 1234</li>
+                            <li><i class="fas fa-envelope"></i> Email: stickonline@gmail.com</li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-12 item">
+                        <p class="title">Hỗ trợ khách hàng</p>
+                        <ul class="lh2-ul">
+                            <li><a href="">Liên hệ với chúng tôi</a></li>
+                            <li><a href="">Câu hỏi thường gặp</a></li>
+                            <li><a href="">Điều khoản và chính sách</a></li>
+                            <li><a href="">Chăm sóc khách hàng</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-12 item">
+                        <p class="title">DỊCH VỤ</p>
+                        <ul class="lh2-ul">
+                            <li><a href="">Thuê xe du lịch</a></li>
+                            <li><a href="">Thuê xe du lịch</a></li>
+                            <li><a href="">Thuê xe du lịch</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-12 item">
+                        <p class="title">GỬI LIÊN HỆ</p>
+                        <p>Liên hệ ngay với chúng tôi để nhận được những ưu đãi mới nhất</p>
+                        <input type="" name="" placeholder="Nhập email của bạn">
+                        <button type="">Gửi</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--backtotop-->
+    <a class="btn-top" id="bttop" href="javascript:void(0);" title="Top" style="display: inline;"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>
+
+
+
+    <!--bootstrap-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!--Javascript-->
+    <script src="./JS/jquery.min.js"></script>
+    <script src="./JS/main.js"></script>
+</body>
+
+</html>

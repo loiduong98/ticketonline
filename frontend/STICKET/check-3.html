@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Thông tin</title>
+    <!--Font Google-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700&display=swap" rel="stylesheet">
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <!--bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!--CSS-->
+    <link rel="stylesheet" href="./CSS//style.css">
+</head>
+
+<body>
+    <!-- header -->
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-light bg-info">
+            <div class="container">
+                <a class="navbar-brand" href="./index.html">TICKET</a>
+                <button class="navbar-toggler" data-toggle="collapse" data-target="#menuNav">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                <div class="collapse navbar-collapse" id="menuNav">
+                    <ul class="navbar-nav m-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="./index.html">Trang Chủ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./login.html">Đăng Nhập</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./contact.html">Liên Hệ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./new.html">Tin Tức</a>
+                        </li>
+                    </ul>
+                    <!--form tìm kiếm-->
+                    <form class="form-inline">
+                        <input class="form-control mr-2" placeholder="Tìm Kiếm">
+                        <button class="btn btn-outline-light">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- content  -->
+    <section id="content list-step">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 clearfix" id="checkout">
+                    <div class="box">
+                        <form method="post" action="check-1.html">
+                            <ul class="nav nav-pills nav-justified">
+                                <li class="disabled"><a href="javascript:;"><i class="fa fa-map-marker"></i><br>CHỌN TUYẾN</a>
+                                </li>
+                                <li class="disabled"><a href="javascript:;"><i class="fa fa-truck"></i><br>CHỌN GHẾ</a>
+                                </li>
+                                <li class="active"><a href="javascript:;"><i class="fa fa-truck"></i><br>THÔNG TIN KHÁCH HÀNG</a>
+                                </li>
+                                <li class="disabled"><a href="javascript:;"><i class="fa fa-eye"></i><br>THANH TOÁN</a>
+                                </li>
+                            </ul>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- info -->
+    <section id="body-content">
+        <div class="container" id="content-steps">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-ms-12">
+                    <div class="panel" style="min-height: 390px">
+                        <h4 class="text-center text-primary text-uppercase">Thông tin khách hàng</h4>
+                        <form action="">
+                            <fieldset>
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-ms-12">
+                                        <div class="form-group clearfix">
+                                            <label>Họ Tên</label>
+                                            <div class="controls no-icon">
+                                                <input class="form-control" type="text" placeholder="Họ tên">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-ms-12">
+                                        <div class="form-group clearfix">
+                                            <label>Email</label>
+                                            <div class="controls no-icon">
+                                                <input class="form-control" type="text" placeholder="Email">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-ms-12">
+                                        <div class="form-group clearfix">
+                                            <label>Ngày Sinh</label>
+                                            <div class="controls no-icon">
+                                                <input class="form-control" type="date" placeholder="Ngày sinh">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-ms-12">
+                                        <div class="form-group clearfix">
+                                            <label>Di Động</label>
+                                            <div class="controls no-icon">
+                                                <input class="form-control" type="text" placeholder="Số di động">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-ms-12">
+                                        <div class="form-group clearfix">
+                                            <label>Di Động 2</label>
+                                            <div class="controls no-icon">
+                                                <input class="form-control" type="text" placeholder="Số di động 2">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-ms-12">
+                                        <div class="form-group clearfix">
+                                            <label>Tỉnh/TP</label>
+                                            <div class="controls no-icon">
+                                                <select class="form-control" name="" id="">
+                                            <option value="0" label="Chọn tỉnh/tp" selected="selected">Chọn tỉnh/Tp</option>
+                                            <option value="1" label="Cần Thơ">Cần Thơ</option>
+                                            <option value="2" label="TP Hồ Chí Minh">TP Hồ Chí Minh</option>
+                                            <option value="3" label="Đà Lạt">Đà Lạt</option>
+                                        </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-ms-12">
+                                        <div class="form-group clearfix ">
+                                            <label>Quận/huyện</label>
+                                            <div class="controls no-icon">
+                                                <select class="form-control" name="" id="">
+                                            <option value="0" label="Chọn quận/huyện" selected="selected">Chọn quận/huyện</option> 
+                                      
+                                            </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-ms-12">
+                    <div class="panel" style="min-height: 390px">
+                        <h4 class="text-center text-uppercase text-primary">
+                            Điều khoản & Lưu ý
+                        </h4>
+                        <div>
+                            <p class="text-justify">
+                                * Quý khách vui lòng mang email có chứa mã vé đến văn phòng để đổi vé lên xe trước giờ xuất bến ít nhất 60 phút.
+                            </p>
+                            <p class="text-justify">
+                                * Thông tin hành khách phải chính xác, nếu không sẽ không thể lên xe hoặc hủy/đổi vé.
+                            </p>
+                            <p class="text-justify">
+                                * Quý khách không được đổi / trả vé vào các ngày Lễ Tết ( ngày thường quý khách được quyền chuyển đổi hoặc hủy vé một lần duy nhất trước giờ xe chạy 24h ), phí hủy vé là 10%.
+                            </p>
+                            <p class="text-justify">
+
+                            </p>
+                            <p class="text-justify"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container" style="padding:20px; ">
+        <a href="./check-2.html" ng-click="prev()" class="btn btn-primary btn-flat"><i class="fa fa-arrow-left icon-flat bg-btn-actived" style="text-align: center;"></i> Quay lại</a>
+        <a href="./check-4.html" ng-click="prev()" class="btn btn-primary btn-flat"><i class="fa fa-arrow-right icon-flat bg-btn-actived"></i> Tiếp Tục</a>
+    </div>
+
+
+    <!--footer-->
+    <section class="footer-bg">
+        <div class="block-footer bg-info">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-12 item">
+                        <p class="title">GIỚI THIỆU</p>
+                        <p class="caption">STICK là dịch vụ đặt vé xe online</p>
+                        <ul class="lh2-ul">
+                            <li><i class="fas fa-map-marker-alt"></i>Khu công nghệ cao Q9</li>
+                            <li><i class="fas fa-phone"></i>1900 1234</li>
+                            <li><i class="fas fa-envelope"></i> Email: stickonline@gmail.com</li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-12 item">
+                        <p class="title">Hỗ trợ khách hàng</p>
+                        <ul class="lh2-ul">
+                            <li><a href="">Liên hệ với chúng tôi</a></li>
+                            <li><a href="">Câu hỏi thường gặp</a></li>
+                            <li><a href="">Điều khoản và chính sách</a></li>
+                            <li><a href="">Chăm sóc khách hàng</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-12 item">
+                        <p class="title">DỊCH VỤ</p>
+                        <ul class="lh2-ul">
+                            <li><a href="">Thuê xe du lịch</a></li>
+                            <li><a href="">Thuê xe du lịch</a></li>
+                            <li><a href="">Thuê xe du lịch</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-12 item">
+                        <p class="title">GỬI LIÊN HỆ</p>
+                        <p>Liên hệ ngay với chúng tôi để nhận được những ưu đãi mới nhất</p>
+                        <input type="" name="" placeholder="Nhập email của bạn">
+                        <button type="">Gửi</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--backtotop-->
+    <a class="btn-top" id="bttop" href="javascript:void(0);" title="Top" style="display: inline;"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>
+
+
+
+    <!--bootstrap-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!--Javascript-->
+    <script src="./JS/jquery.min.js"></script>
+    <script src="./JS/main.js"></script>
+</body>
