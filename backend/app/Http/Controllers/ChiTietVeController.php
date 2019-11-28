@@ -10,15 +10,9 @@ class ChiTietVeController extends Controller
 {
     public function getDanhSach()
     {
-        $chitietghe = chitietghe::all();
+        
     	$chitietve = chitietve::orderBy('id','DESC')->get();
     	return view('admin.chitietve.danhsach', ['chitietve'=>$chitietve]);
-    }
-
-    public function getThem()
-    {
-        $chitietghe = chitietghe::all();
-    	return view('admin.chitietve.them',['chitietghe'=>$chitietghe]);
     }
 
     public function postThem(Request $request)

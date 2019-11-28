@@ -13,8 +13,6 @@
                         <thead>
                             <tr align="center">
                                 <th>ID</th>
-                                <th>Ngày khởi hành</th>
-                                <th>Giờ khởi hành</th>
                                 <th>Giá</th>
                                 <th>Tên tuyến</th>
                                 <th>Sơ đồ ghế</th>
@@ -25,9 +23,7 @@
                         <tbody>
                             @foreach($lichchay as $lc)
                             <tr class="odd gradeX" align="center">
-                                <td>{{$lc->id}}</td>
-                                <td>{{$lc->NgayKhoiHanh}}</td>
-                                <td>{{$lc->GioKhoiHanh}}</td>
+                                <td>{{$lc->id}}</td>                               
                                 <td>{{$lc->Gia}}</td>
                                 <td>{{$lc->tuyen->TenTuyen}}</td>
                                 <td>{{$lc->xe->idSoDoGhe}}</td>

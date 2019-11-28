@@ -92,9 +92,7 @@
                                 <li>
                                     <a href="admin/ve/danhsach">Danh sách vé</a>
                                 </li>
-                                <li>
-                                    <a href="admin/ve/them">Thêm vé</a>
-                                </li>
+                                
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>

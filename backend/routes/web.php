@@ -57,9 +57,6 @@ Route::group(['prefix'=>'admin'], function(){
 	Route::group(['prefix'=>'ve'], function(){
 		Route::get('danhsach','VeController@getDanhSach');
 
-		Route::get('them','VeController@getThem');
-		Route::post('them','VeController@postThem');
-
 		Route::get('sua/{id}','VeController@getSua');
 		Route::post('sua/{id}','VeController@postSua');
 
@@ -222,9 +219,6 @@ Route::group(['prefix'=>'admin'], function(){
 	Route::group(['prefix'=>'chitietve'], function(){
 		Route::get('danhsach','ChiTietVeController@getDanhSach');
 
-		Route::get('them','ChiTietVeController@getThem');
-		Route::post('them','ChiTietVeController@postThem');
-
 		Route::get('sua/{id}','ChiTietVeController@getSua');
 		Route::post('sua/{id}','ChiTietVeController@postSua');
 
@@ -241,28 +235,24 @@ Route::group(['prefix'=>'page'], function(){
 		Route::get('checkout','DatVeController@getTT');
 		Route::post('checkout','DatVeController@postTT');
 
-		// Route::get('1','DatVeController@getTT1');
-		
-		// Route::post('1','DatVeController@postTT1');
+		//Route::get('qrcode','DatVeController@getQR');
 
-		// Route::get('2','DatVeController@getTT2');
-		
-		
-		
-		// Route::post('2','DatVeController@postTT2');
-		
-		// Route::get('3','DatVeController@getTT3');
-		
-		// Route::post('3','DatVeController@postTT3');
-
-		// Route::get('4','DatVeController@getTT4');
-	
-		// Route::post('4','DatVeController@postTT4');
-	 
-		// Route::get('datvethanhcong','DatVeController@getDVTC');
-		
 		Route::get('dvtc','DatVeController@getDVTC');
 	});
 	
 	
+});
+
+Auth::routes();
+
+Route::group(['prefix'=>'admin'], function(){
+	Route::group(['prefix'=>'login'], function(){
+		Route::get('/home', 'HomeController@index')->name('home');
+		Route::post('/home', 'HomeController@index')->name('home');
+	});	
+});
+
+Route::get('qr-code', function () {
+	
+    return QrCode::size(500)->generate("16546848645313486");
 });

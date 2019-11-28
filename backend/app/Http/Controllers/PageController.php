@@ -37,7 +37,7 @@ class PageController extends Controller
             $message->from('loiduong0511@gmail.com','Hệ thống bán vé xe điện tử LD');
         });
 
-        return Redirect('page/checkout/dvtc')->with('thongbao', 'Đặt vé thành công');
+        return Redirect('page/mail')->with('thongbao', 'Đặt vé thành công');
     }
     
 }

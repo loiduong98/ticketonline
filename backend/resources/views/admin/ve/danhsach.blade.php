@@ -17,6 +17,8 @@
                                 <th>Tên khách hàng</th>
                                 <th>ID lịch chạy</th>
                                 <th>ID hóa đơn</th>
+                                <th>Ngày khởi hành</th>
+                                <th>Giờ khởi hành</th>
                                 <th>Xóa</th>
                                 <th>Sửa</th>
                             </tr>
@@ -29,6 +31,8 @@
                                 <td>{{$v->khachhang->HoTen}}</td>
                                 <td>{{$v->idLC}}</td>
                                 <td>{{$v->idHD}}</td>
+                                <td>{{$v->NgayKhoiHanh}}</td>
+                                <td>{{$v->GioKhoiHanh}}</td>
                                 <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="admin/ve/xoa/{{$v->id}}"> Xóa</a></td>
                                 <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="admin/ve/sua/{{$v->id}}">Sửa</a></td>
                             </tr>
