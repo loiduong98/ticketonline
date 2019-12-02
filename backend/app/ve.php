@@ -23,4 +23,5 @@ class ve extends Model
     {
     	return $this->belongsTo('App\hoadon','idHD','id');
     }
+    
 }

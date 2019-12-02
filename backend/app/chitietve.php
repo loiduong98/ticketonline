@@ -10,6 +10,10 @@ class chitietve extends Model
     public $timestamps = false;
     public function chitietghe()
     {
-    	return $this->belongsTo('App\chitietghe','idGhe','id');
+    	return $this->hasMany('App\chitietghe','idGhe','id');
+    }
+    public function ve()
+    {
+    	return $this->belongsTo('App\ve','idVe','id');
     }
 }

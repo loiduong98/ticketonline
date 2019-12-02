@@ -26,7 +26,7 @@
                             <tr class="odd gradeX" align="center">
                                 <td>{{$ctv->id}}</td>
                                 <td>{{$ctv->idVe}}</td>
-                                <td>{{$ctv->chitietghe->TenGhe}}</td>
+                                <td>{{$ctv->idGhe}}</td>
                                 <td>{{$ctv->Gia}}</td>
                                 <td>{{$ctv->SoLuong}}</td>
                                 <td>{{$ctv->MaBiMat}}</td>                               

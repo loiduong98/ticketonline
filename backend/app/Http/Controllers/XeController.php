@@ -34,7 +34,7 @@ class XeController extends Controller
     		]);
     	$xe = new xe;
     	$xe->BSXe = $request->BSXe;
-    	$xe->idSoDoGhe = $request->sodoghe;
+    	$xe->idSoDoGhe = $request->idSoDoGhe;
     	$xe->save();
     	return redirect('admin/xe/them')->with('thongbao','Thêm thành công');
     }

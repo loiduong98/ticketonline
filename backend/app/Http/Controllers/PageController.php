@@ -30,14 +30,6 @@ class PageController extends Controller
     {
     	return view('page.layout.mail');
     }
-    	public function postMail(Request $request)
-    {
-        Mail::send(['html'=>'page.layout.mailfb'],['name','Lợi Dương'],function($message){
-            $message->to('loiduong0511@yahoo.com')->subject("Chúc mừng bạn đã đặt vé thành công");
-            $message->from('loiduong0511@gmail.com','Hệ thống bán vé xe điện tử LD');
-        });
-
-        return Redirect('page/mail')->with('thongbao', 'Đặt vé thành công');
-    }
+    	
     
 }

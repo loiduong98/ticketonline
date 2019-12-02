@@ -63,7 +63,7 @@
 }
 
  </style>
-<div class="col-lg-7" style="padding-bottom:120px">
+<div class="container" class="col-lg-7" style="padding-bottom:120px">
                         @if(count($errors) > 0)
                             <div class="alert alert-danger">
                                 @foreach($errors->all() as $err){{$err}}<br>

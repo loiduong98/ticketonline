@@ -16,6 +16,7 @@ use App\ve;
 use App\hoadon;
 use App\ct_hoadon;
 use Mail;
+use QrCode;
 
 class DatVeController extends Controller
 {
@@ -29,13 +30,15 @@ class DatVeController extends Controller
         $chitietve = chitietve::all();
         $sodoghe = sodoghe::all();
         $khachhang = khachhang::all();
+        $ve = ve::all();
         $hinhthucthanhtoan = hinhthucthanhtoan::all();
         $data = array(
             'ben'=>$ben,
             'chitietghe'=>$chitietghe,
             'hinhthucthanhtoan'=>$hinhthucthanhtoan,
             'khachhang'=>$khachhang,
-            'chitietve'=>$chitietve
+            'chitietve'=>$chitietve,
+            've'=>$ve,
         );
         
         return view('page.layout.checkout',$data);
@@ -82,12 +85,6 @@ class DatVeController extends Controller
                 $giaLC = $LC_gia;
             }
         }
-        // foreach($chitietve as $keyCTV){
-        //     $CTV_id = $keyCTV->id;
-        //     $CTV_ve = $keyCTV->idVe;
-        //     $CTV_mbm = $keyCTV->MaBiMat;
-        //     if($)
-        // }
         
         // check khach hang
         foreach($khachhang as $keyKH){
@@ -133,6 +130,15 @@ class DatVeController extends Controller
         $ve->GioKhoiHanh = $GioKhoiHanh;
         $ve->save();
         $id_ve = $ve->id;
+        
+        // foreach($chitietve as $keyCTV){
+        //     $CTV_id = $keyCTV->id;
+        //     $CTV_ve = $keyCTV->idVe;
+        //     $CTV_mbm = $keyCTV->MaBiMat;
+        //     if($CTV_id = $id_ve){
+        //         $CTV_mbm == $CTV_qrcode;
+                
+        // }
 
         $ct_hoadon = new ct_hoadon;
         $ct_hoadon->id_hoadon = $id_HD;      
@@ -152,15 +158,10 @@ class DatVeController extends Controller
             $message->to('loiduong0511@yahoo.com')->subject("Chúc mừng bạn đã đặt vé thành công");
             $message->from('loiduong0511@gmail.com','Hệ thống bán vé xe điện tử LD');
         });
-
-        // return QrCode::size(500)->generate($MaBiMat);
+        // QrCode::generate($CTV_mbm);
         return Redirect('page/checkout/checkout')->with('thongbao','Đặt vé thành công');
         
         
-    }
-    public function getDVTC()
-    {
-        return view('page.layout.datvethanhcong');       
     }
    
 }
