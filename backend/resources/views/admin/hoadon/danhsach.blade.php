@@ -13,25 +13,28 @@
                         <thead>
                             <tr align="center">
                                 <th>ID</th>
-                                <th>Tên ghế</th>
-                                <th>Giá</th>
-                                <th>Số lượng</th>
-                                <th>Mã bí mật</th>
-                                <th> </th>
+                                <th>Ngày đặt vé</th>
+                                <th>Tổng tiền</th>
+                                <th>Ghi chú</th>
+                                <th>Tên khách hàng</th>
+                                <th>Hình thức thanh toán</th>
+                                <th></th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($chitietve as $ctv)
+                            @foreach($hoadon as $hd)
                             <tr class="odd gradeX" align="center">
-                                <td>{{$ctv->id}}</td>
-                                <td>{{$ctv->chitietghe->TenGhe}}</td>
-                                <td>{{$ctv->Gia}}</td>
-                                <td>{{$ctv->SoLuong}}</td>
-                                <td>{{$ctv->MaBiMat}}</td>                               
-                                <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="admin/ve/danhsach"> Quay lại</a></td>
+                                <td>{{$hd->id}}</td>
+                                <td>{{$hd->NgayDatVe}}</td>
+                                <td>{{$hd->TongTien}}</td>
+                                <td>{{$hd->GhiChu}}</td>
+                                <td>{{$hd->khachhang->HoTen}}</td>
+                                <td>{{$hd->hinhthucthanhtoan->TenHTTT}}</td>
+                                <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="admin/hoadon/chitiet/{{$hd->id}}"> Chi tiết hóa đơn</a></td>                 
                             </tr>
                             @endforeach
                         </tbody>
+                        
                     </table>
                 </div>
                 <!-- /.row -->

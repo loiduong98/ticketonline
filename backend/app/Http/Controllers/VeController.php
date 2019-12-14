@@ -4,15 +4,20 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\ve;
+use App\xe;
 use App\khachhang;
 use App\nhanvien;
+use App\lichchay;
+use App\chitietve;
 
 class VeController extends Controller
 {
     public function getDanhSach()
     {
-    	$ve = ve::orderBy('id','DESC')->get();
-    	return view('admin.ve.danhsach', ['ve'=>$ve]);
+        chitietve::all();
+        $ve = ve::orderBy('id','DESC')->get();
+        return view('admin.ve.danhsach', ['ve'=>$ve]);
+        
     }
 
     public function getThem()
@@ -24,6 +29,7 @@ class VeController extends Controller
     {
         $ve = ve::find($id);
         return view('admin.ve.sua', ['ve'=>$ve]);
+        
     }
 
     public function postSua(Request $request,$id)

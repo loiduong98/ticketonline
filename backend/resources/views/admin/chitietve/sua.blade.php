@@ -4,7 +4,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="page-header">Chi tiết tuyến
+                        <h1 class="page-header">Chi tiết vé
                             <small>{{$chitietghe->id}}</small>
                         </h1>
                     </div>

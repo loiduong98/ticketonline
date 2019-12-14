@@ -48,6 +48,24 @@ class DatVeController extends Controller
    
     public function postTT(Request $request)
     {     
+        $this->validate($request,
+            [
+                'NgayKhoiHanh'=>'required',
+                
+                'HoTen'=>'required',
+                'SDT'=>'required',
+                'Email'=>'required',
+                'DiaChi'=>'required'
+            ],
+            [
+                'SDT.required'=>'Bạn chưa nhập số điện thoại',               
+                'Email.required'=>'Bạn chưa nhập email',
+                'DiaChi.required'=>'Bạn chưa nhập địa chỉ',
+                'NgayKhoiHanh.required'=>'Bạn chưa chọn ngày khởi hành',
+                'idCV.required'=>'Bạn chưa chọn id CV',
+                
+                'HoTen.required'=>'Bạn chưa nhập tên nhân viên',
+            ]);
         $lichchay = lichchay::all();
         $khachhang = khachhang::all();
         $tuyen     = tuyen::all();
@@ -80,9 +98,11 @@ class DatVeController extends Controller
             $LC_id = $keyLC->id;
             $LC_tuyen = $keyLC->idTuyen;
             $LC_gia = $keyLC->Gia;
+            $LC_xe = $keyLC->idXe;
             if($id_tuyen == $LC_tuyen){
                 $idLC = $LC_id;
                 $giaLC = $LC_gia;
+                $id_Xe = $LC_xe;
             }
         }
         
@@ -128,6 +148,7 @@ class DatVeController extends Controller
         $ve->idHD = $id_HD;
         $ve->NgayKhoiHanh = $NgayKhoiHanh;
         $ve->GioKhoiHanh = $GioKhoiHanh;
+        $ve->idXe = $id_Xe;
         $ve->save();
         $id_ve = $ve->id;
         
@@ -154,12 +175,39 @@ class DatVeController extends Controller
         $chitietve->MaBiMat =  $id_ve."$"."_".str_random(32).($request->MaBiMat);
         $chitietve->save();
 
-        Mail::send(['html'=>'page.layout.mailfb'],['name','Lợi Dương'],function($message){
-            $message->to('loiduong0511@yahoo.com')->subject("Chúc mừng bạn đã đặt vé thành công");
-            $message->from('loiduong0511@gmail.com','Hệ thống bán vé xe điện tử LD');
-        });
+        
+            //add more detail ticket
+            
+            // $chitietve = [];
+            // foreach($chitietve as $ctv){               
+            //     $tenghe = [];
+            //     $ctv = new chitietve;
+            //     $ctv->idVe = $id_ve;
+            //     $ctv->idGhe = $tenghe[] = $request->input('TenGhe');
+            //     $ctv->Gia = $TongTien = $request->input('Gia'); 
+            //     $ctv->SoLuong = $Soluong = $request->input('SoLuong'); 
+            //     $ctv->MaBiMat =  $id_ve."$"."_".str_random(32).($request->MaBiMat); 
+            //     $ctv->save();    
+        
+            // }
+            // dd($chitietve);
+        
+    
+
+    
+        // Mail::send(['html'=>'page.layout.mailfb'],['name','Lợi Dương'],function($message){
+        //     $message->to('loiduong0511@yahoo.com')->subject("Chúc mừng bạn đã đặt vé thành công");
+        //     $message->from('loiduong0511@gmail.com','Hệ thống bán vé xe điện tử LD');
+        // });
+            $HoTen = $request->all();
+            $Email = $request->all();
+            Mail::send(['html'=>'page.layout.mailfb'], array('HoTen'=>$HoTen,'Email'=>$Email), function($message){
+                $message->to('loiduong0511@yahoo.com')->subject('Visitor Feedback!');
+            });
+            Session::flash('flash_message', 'Send message successfully!');
+
         // QrCode::generate($CTV_mbm);
-        return Redirect('page/checkout/checkout')->with('thongbao','Đặt vé thành công');
+        return Redirect('page/checkout')->with('thongbao','Đặt vé thành công');
         
         
     }

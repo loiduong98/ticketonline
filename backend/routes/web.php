@@ -218,6 +218,7 @@ Route::group(['prefix'=>'admin'], function(){
 Route::group(['prefix'=>'admin'], function(){
 	Route::group(['prefix'=>'chitietve'], function(){
 		Route::get('danhsach','ChiTietVeController@getDanhSach');
+		Route::get('chitiet/{id}','ChiTietVeController@getChiTiet');
 
 		Route::get('sua/{id}','ChiTietVeController@getSua');
 		Route::post('sua/{id}','ChiTietVeController@postSua');
@@ -226,21 +227,22 @@ Route::group(['prefix'=>'admin'], function(){
 
 	});
 });
+Route::group(['prefix'=>'admin'], function(){
+	Route::group(['prefix'=>'hoadon'], function(){
+		Route::get('danhsach','HoaDonController@getDanhSach');
+		Route::get('chitiet/{id}','HoaDonController@getChiTiet');
+	});
+});
 
 Route::get('page/index','PageController@getLayout');
 
-Route::group(['prefix'=>'page'], function(){
-	Route::group(['prefix'=>'checkout'], function(){
-		
+Route::group(['prefix'=>'page'], function(){		
 		Route::get('checkout','DatVeController@getTT');
 		Route::post('checkout','DatVeController@postTT');
 
 		//Route::get('qrcode','DatVeController@getQR');
 
-		Route::get('dvtc','DatVeController@getDVTC');
-	});
-	
-	
+		Route::get('dvtc','DatVeController@getDVTC');	
 });
 
 Auth::routes();
@@ -256,3 +258,9 @@ Route::get('qr-code', function () {
 	
     return QrCode::size(500)->generate("16546848645313486");
 });
+// Route::get('update', function () {
+// 	//DB::table('hoadon')->increment('id',176);
+// 	//DB::table('ve')->increment('id',179);
+// 	DB::table('ct_hoadon')->decrement('id_hoadon',1);
+// 	echo "Đã update";
+// });

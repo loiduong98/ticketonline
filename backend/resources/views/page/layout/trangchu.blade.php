@@ -101,7 +101,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-lg-5 col-md-5 col-sm-6 col-xs-6 col-ms-12">
-                                            <a href="page/checkout/checkout" class="btn btn-primary btn-block btn-flat btn-booking">Tiếp Tục</a>
+                                            <a href="page/checkout" class="btn btn-primary btn-block btn-flat btn-booking">Tiếp Tục</a>
                                             <!-- <button type="button" class=" btn btn-primary btn-block btn-flat btn-booking ">Mua vé</button> -->
                                         </div>
                                     </div>
@@ -111,7 +111,7 @@
                     </div>
                 </div>
                 <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 col-ms-12">
-                    <img src="master-asset/img/nen-xam.jpg" alt="">
+                    <img src="master-asset/img/busline.jpg" alt="">
                 </div>
             </div>
         </div>
