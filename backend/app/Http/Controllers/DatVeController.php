@@ -83,6 +83,8 @@ class DatVeController extends Controller
         $DiaChi = $request->DiaChi;
         $TenHTTT = $request->TenHTTT; 
         
+        
+
         foreach($tuyen as $keytuyen){
             $tuyen_di = $keytuyen->idBenDi;
             $tuyen_den = $keytuyen->idBenDen;
@@ -148,6 +150,7 @@ class DatVeController extends Controller
         $ve->idHD = $id_HD;
         $ve->NgayKhoiHanh = $NgayKhoiHanh;
         $ve->GioKhoiHanh = $GioKhoiHanh;
+        $ve->TrangThai = '0';
         $ve->idXe = $id_Xe;
         $ve->save();
         $id_ve = $ve->id;
@@ -166,45 +169,49 @@ class DatVeController extends Controller
         $ct_hoadon->idVe = $id_ve;
         $ct_hoadon->SoLuong = $Soluong;
         $ct_hoadon->save();
+      
+
+        for ($i=0; $i < $Soluong; $i++) { 
+            $chitietve = new chitietve;
+            $chitietve->idVe = $id_ve;
+            $chitietve->idGhe = $TenGhe;
+            $chitietve->Gia = $giaLC;
+            $chitietve->SoLuong = $Soluong/$Soluong;
+            $chitietve->MaBiMat =  $id_ve."$"."_".str_random(32).($request->MaBiMat);
+            $chitietve->save();
+        }
         
-        $chitietve = new chitietve;
-        $chitietve->idVe = $id_ve;
-        $chitietve->idGhe = $TenGhe;
-        $chitietve->Gia = $TongTien;
-        $chitietve->SoLuong = $Soluong;
-        $chitietve->MaBiMat =  $id_ve."$"."_".str_random(32).($request->MaBiMat);
-        $chitietve->save();
 
         
-            //add more detail ticket
-            
-            // $chitietve = [];
-            // foreach($chitietve as $ctv){               
-            //     $tenghe = [];
-            //     $ctv = new chitietve;
-            //     $ctv->idVe = $id_ve;
-            //     $ctv->idGhe = $tenghe[] = $request->input('TenGhe');
-            //     $ctv->Gia = $TongTien = $request->input('Gia'); 
-            //     $ctv->SoLuong = $Soluong = $request->input('SoLuong'); 
-            //     $ctv->MaBiMat =  $id_ve."$"."_".str_random(32).($request->MaBiMat); 
-            //     $ctv->save();    
+        // add more detail ticket
         
-            // }
-            // dd($chitietve);
+        // $chitietve = [];
+        // foreach($chitietve as $ctv){               
+        //     $tenghe = [];
+        //     $ctv = new chitietve;
+        //     $ctv->idVe = $id_ve;
+        //     $ctv->idGhe = $tenghe[] = $request->input('TenGhe');
+        //     $ctv->Gia = $TongTien = $request->input('Gia'); 
+        //     $ctv->SoLuong = $Soluong = $request->input('SoLuong'); 
+        //     $ctv->MaBiMat =  $id_ve."$"."_".str_random(32).($request->MaBiMat); 
+        //     $ctv->save();    
+        //     $chitietve[] = $ctv;
+        // }
+        // dd($chitietve);
         
     
 
     
-        // Mail::send(['html'=>'page.layout.mailfb'],['name','Lợi Dương'],function($message){
-        //     $message->to('loiduong0511@yahoo.com')->subject("Chúc mừng bạn đã đặt vé thành công");
-        //     $message->from('loiduong0511@gmail.com','Hệ thống bán vé xe điện tử LD');
-        // });
-            $HoTen = $request->all();
-            $Email = $request->all();
-            Mail::send(['html'=>'page.layout.mailfb'], array('HoTen'=>$HoTen,'Email'=>$Email), function($message){
-                $message->to('loiduong0511@yahoo.com')->subject('Visitor Feedback!');
-            });
-            Session::flash('flash_message', 'Send message successfully!');
+        Mail::send(['html'=>'page.layout.mailfb'],['name','Lợi Dương'],function($message){
+            $message->to('loiduong0511@yahoo.com')->subject("Chúc mừng bạn đã đặt vé thành công");
+            $message->from('loiduong0511@gmail.com','Hệ thống bán vé xe điện tử LD');
+        });
+            // $HoTen = $request->all();
+            // $Email = $request->all();
+            // Mail::send(['html'=>'page.layout.mailfb'], array('HoTen'=>$HoTen,'Email'=>$Email), function($message){
+            //     $message->to('loiduong0511@yahoo.com')->subject('Visitor Feedback!');
+            // });
+            // Session::flash('flash_message', 'Send message successfully!');
 
         // QrCode::generate($CTV_mbm);
         return Redirect('page/checkout')->with('thongbao','Đặt vé thành công');

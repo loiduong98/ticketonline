@@ -15,14 +15,13 @@ class Lichchay extends Migration
     {
         Schema::create('lichchay',function($table){
             $table->increments('id');
-            $table->string('NgayKhoiHanh');
-            $table->string('GioKhoiHanh');
-            $table->string('SoChuyen');
-            $table->string('Gia');
+            $table->string('Gia');            
             $table->integer('idTuyen')->unsigned();
             $table->foreign('idTuyen')->references('id')->on('tuyen');
             $table->integer('idXe')->unsigned();
             $table->foreign('idXe')->references('id')->on('xe');
+            $table->string('TenLC');
+            $table->string('TrangThai');
         });
     }
 

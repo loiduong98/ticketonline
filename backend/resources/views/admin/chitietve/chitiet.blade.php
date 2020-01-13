@@ -10,7 +10,7 @@
                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                     <thead>
                         <tr align="center">
-                            <th>ID</th>
+                            <th>ID Vé</th>
                             <th>Tên ghế</th>
                             <th>Giá</th>
                             <th>Số lượng</th>
@@ -19,7 +19,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <th>{{$chitietve->id}}</th>
+                        <th>{{$chitietve->idVe}}</th>
                         <th>{{$chitietve->idGhe}}</th>
                         <th>{{$chitietve->Gia}}</th>
                         <th>{{$chitietve->SoLuong}}</th>

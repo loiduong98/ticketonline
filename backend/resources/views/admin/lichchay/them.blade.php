@@ -24,27 +24,35 @@
                         @endif
                         <form action="admin/lichchay/them" method="POST" enctype="multipart/form-data">
                              <input type="hidden" name="_token" value="{{csrf_token()}}" />
-                            <div class="form-group">
-                                <label>Ngày khởi hành</label>
-                                <input class="form-control" type="date" name="NgayKhoiHanh" placeholder="Chọn ngày khởi hành" />
-                            </div>
                             
-                            <div class="form-group">
-                                <label>Giờ khởi hành</label>
-                                <input class="form-control" type="time" name="GioKhoiHanh" placeholder="Chọn giờ khởi hành" />
-                            </div>
                             <div class="form-group">
                                 <label>Giá</label>
                                 <input class="form-control" name="Gia" placeholder="Nhập giá" />
                             </div>
                             <div class="form-group">
-                                <label>Id Tuyến</label>
-                                <input class="form-control" name="idTuyen" placeholder="Nhập id tuyến" />
+                                <label>Tuyến</label>
+                                <select class="form-control" name="idTuyen">
+                                    @foreach($tuyen as $t)
+                                    <option value="{{$t['id']}}">{{$t['TenTuyen']}}</option>
+                                    @endforeach
+                                </select>
                             </div>
                             <div class="form-group">
-                                <label>Id Xe</label>
-                                <input class="form-control" name="idXe" placeholder="Nhập id xe" />
-                            </div>                           
+                                <label>Biển số xe</label>
+                                <select class="form-control" name="idXe">
+                                    @foreach($xe as $x)
+                                    <option value="{{$x['id']}}">{{$x->BSXe}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div>
+                            <label>Trạng Thái</label>
+                            <select class="form-control" name="TrangThai">
+                                <option value="1">Hoạt động</option>
+                                <option value="0">Không hoạt động</option>   
+                            </select>
+                            </div>
+                            <br>                         
                             <button type="submit" class="btn btn-default">Thêm Lịch chạy</button>
                             <button type="reset" class="btn btn-default">Làm mới</button>
                         <form>

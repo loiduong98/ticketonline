@@ -15,7 +15,8 @@
                                 <th>ID</th>
                                 <th>Giá</th>
                                 <th>Tên tuyến</th>
-                                <th>Sơ đồ ghế</th>
+                                <th>Biển số xe</th>
+                                <th>Trạng thái</th>
                                 <th>Xóa</th>
                                 <th>Sửa</th>
                             </tr>
@@ -26,7 +27,8 @@
                                 <td>{{$lc->id}}</td>                               
                                 <td>{{$lc->Gia}}</td>
                                 <td>{{$lc->tuyen->TenTuyen}}</td>
-                                <td>{{$lc->xe->idSoDoGhe}}</td>
+                                <td>{{$lc->xe->BSXe}}</td>
+                                <td>{{$lc->TrangThai}}</td>
                                 <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="admin/lichchay/xoa/{{$lc->id}}"> Xóa</a></td>
                                 <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="admin/lichchay/sua/{{$lc->id}}">Sửa</a></td>
                             </tr>

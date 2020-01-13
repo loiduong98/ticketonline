@@ -18,6 +18,7 @@ class Xe extends Migration
             $table->string('BSXe');
             $table->integer('idSoDoGhe')->unsigned();
             $table->foreign('idSoDoGhe')->references('id')->on('sodoghe');
+            $table->string('TrangThai');
         });
     }
 

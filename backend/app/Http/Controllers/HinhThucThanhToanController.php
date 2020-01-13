@@ -33,6 +33,7 @@ class HinhThucThanhToanController extends Controller
             ]);
         $hinhthucthanhtoan = new hinhthucthanhtoan;
         $hinhthucthanhtoan->TenHTTT = $request->TenHTTT;
+        $hinhthucthanhtoan->TrangThai = $request->TrangThai;
         $hinhthucthanhtoan->save();
         return redirect('admin/hinhthucthanhtoan/them')->with('thongbao','Thêm thành công');
     }
@@ -56,6 +57,7 @@ class HinhThucThanhToanController extends Controller
                 'TenHTTT.max'=>'Tên tuyến quá dài'
             ]);
         $hinhthucthanhtoan->TenHTTT = $request->TenHTTT;
+        $hinhthucthanhtoan->TrangThai = $request->TrangThai;
         $hinhthucthanhtoan->save();
         return redirect('admin/hinhthucthanhtoan/sua/'.$id)->with('thongbao','Sửa thành công');
     }

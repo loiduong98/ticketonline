@@ -28,6 +28,14 @@
                                 <label>Tên hình thức thanh toán</label>
                                 <input class="form-control" name="TenHTTT" placeholder="Nhập tên hình thức thanh toán" />
                             </div>
+                            <div>
+                            <label>Trạng Thái</label>
+                            <select class="form-control" name="TrangThai">
+                                <option value="1">Hoạt động</option>
+                                <option value="0">Không hoạt động</option>   
+                            </select>
+                            </div>
+                            <br>  
                             <button type="submit" class="btn btn-default">Thêm hình thức thanh toán</button>
                             <button type="reset" class="btn btn-default">Làm mới</button>
                         <form>

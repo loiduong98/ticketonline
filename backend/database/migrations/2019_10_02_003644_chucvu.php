@@ -16,6 +16,7 @@ class Chucvu extends Migration
         Schema::create('chucvu',function($table){
             $table->increments('id');
             $table->string('TenCV');
+            $table->string('TrangThai');
         });
     }
 

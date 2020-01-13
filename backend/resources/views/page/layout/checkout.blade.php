@@ -11,7 +11,7 @@
 }
 
 .booked {
-    color: #eaeaea;
+    color: #968684;
 }
 
 .selecting {
@@ -166,7 +166,7 @@
                     <div
                         class="table-responsive|table-responsive-sm|table-responsive-md|table-responsive-lg|table-responsive-xl">
                         <table
-                            class="table table-striped|table-dark|table-bordered|table-borderless|table-hover|table-sm">
+                            class="table table-striped|table-dark|table-bordered|table-borderless|table-hover|table-sm" name="TenGhe" id="TenGhe">
                             <thead class="thead-dark|thead-light">
                                 <tr>
                                     <th scope="col" style="color: red">Sơ đồ ghế</th>
@@ -179,7 +179,7 @@
                                     </th>
 
                                     <th scope="col">
-                                        <div style="color: #eaeaea;">
+                                        <div style="color: #968684;">
                                             <i class="fa fa-bed"></i> đã đặt
                                         </div>
                                     </th>
@@ -196,11 +196,11 @@
                             <tbody>
                                 <tr>
                                     <td><img style="width: 50px;height: 50px;" src="master-asset/img/volang.png"
-                                            alt="vola ng"></td>
+                                            alt="volang"></td>
                                     <td></td>
                                     <td></td>
                                     <td><img style="width: 50px;height: 50px;" src="master-asset/img/cua.png"
-                                            alt="vola ng"></td>
+                                            alt="volang"></td>
                                 </tr>
                                 <tr>
                                     <td>
@@ -555,7 +555,7 @@
                                 <div class="form-group clearfix">
                                     <label>Địa chỉ</label>
                                     <div class="controls no-icon">
-                                        <input name="DiaChi" class="form-control" type="text"
+                                        <input id="DiaChi" name="DiaChi" class="form-control" type="text"
                                             placeholder="Địa chỉ của bạn">
                                     </div>
                                 </div>
@@ -605,35 +605,63 @@
 
 
         <div id="thanhtoan" class="container hidethanhtoan" style="padding-top: 10px;">
-            <div class="alert alert-warning">
-                <strong>Lưu ý !</strong> Nếu quý khách chọn thanh toán chuyển khoản, vui lòng chuyển tiền vé trong vòng
-                <strong>12 tiếng</strong> kể từ thời gian đặt vé. Không nhận chuyển khoản vé vào thứ Bảy, Chủ Nhật.
-            </div>
             <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-ms-12">
-                    <!-- <div class="panel">
-                    <p class="text-center text-uppercase text-primary">
-                        <strong>Thông tin đặt vé</strong>
-                    </p>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-ms-12 text-center">
+                    
+                    <script>
+                    //hien thi momo thanh toan
+                    function changeChoose() {
+                        var momo = document.getElementById('TenHTTT');
+                        var showmomo = document.getElementById("showmomo");
+                        if (momo.value == 2) {
+                            var showmomo = document.getElementById('showmomo');
+                            showmomo.innerHTML = '<img src="master-asset/img/momo.jpg" alt="" class="img-fluid">';
+                        } else if(momo.value == 1){
+                            var showmomo = document.getElementById('showmomo');
+                            showmomo.innerHTML = '<p class="pt-5">Ngân hàng Vietcombank</p><p>Số tài khoản: 0071001333878</p><p>Chi nhánh Tp.HCM</p><img src="master-asset/img/vietcombank.png" alt="" class="img-fluid p-3">';
+                        }else if(momo.value == 3){
+                            var showmomo = document.getElementById('showmomo');
+                            showmomo.innerHTML = '<img src="master-asset/img/airpay.jpg" alt="" class="img-fluid">';
+                        }
+                    }
+                    //ket thuc thanh toan
+                    //----------------------------------
+                    </script>
+                    
+                    <select name="TenHTTT" id="TenHTTT" onChange="changeChoose()">
+                        <option><small>Mời bạn chọn hình thức thanh toán</small></option>
+                        @foreach($hinhthucthanhtoan as $httt)
+
+                        <option value="{{$httt->id}}">{{$httt->TenHTTT}}</option>
+                        @endforeach
+                    </select>
+                    <div id="showmomo" class="text-center">
+                        <img src="master-asset/img/thanhtoan.png" alt="" class="img-fluid p-3">
+                    </div>
+                </div>
+                <div class="panel">
+                        <p class="text-center text-uppercase text-primary">
+                            <strong>Thông tin đặt vé</strong>
+                        </p>
                         <div class="form-group">
                             <div class="col-md-12">
-                                <table class="table">
+                                <table class="table show_end">
                                     <tbody>
                                         <tr>
-                                            <td class="col-xs-3">Tuyến:</td>
-                                            <td></td>
+                                            <td class="col-xs-3">Tuyến đi: <span class='tuyendi_show'></span></td>
+                                            <td class=''>Tuyến đến: <span class='tuyenden_show'></td>
                                         </tr>
                                         <tr>
-                                            <td>Ngày đi:</td>
-                                            <td>Ghế/giường:</td>
+                                            <td class=''>Ngày đi: <span class='date_show'></td>
+                                            <td class=''>Giờ đi: <span class='time_show'></td>
+                                            <td class=''>Ghế/giường: <span class='ghe_show'></td>
+                                              
                                         </tr>
                                         <tr>
-                                            <td>Họ tên:</td>
-                                            <td>Ngày sinh:</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Email:</td>
-                                            <td>SĐT:</td>
+                                            <td class=''>Họ tên: <span class='name_show'></td>
+                                            <td class=''>Email: <span class='mail_show'></td>
+                                            <td class=''>SĐT: <span class='phone_show'></td>
+                                            <td class=''>Địa chỉ: <span class='add_show'></td>
                                         </tr>
                                         <tr>
                                             <td>Tổng tiền:</td>
@@ -642,15 +670,8 @@
                                 </table>
                             </div>
                         </div>
-                    
-                </div> -->
-                    <select name="TenHTTT" id="TenHTTT">
-                        @foreach($hinhthucthanhtoan as $httt)
-                        <option value="{{$httt->id}}">{{$httt->TenHTTT}}</option>
-                        @endforeach
-                    </select>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-ms-12">
+                    </div>
+                <!-- <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-ms-12">
                     <div class="panel">
                         <p class="text-center text-primary text-uppercase">
                             <strong>Chọn phương thức thanh toán</strong>
@@ -675,7 +696,11 @@
                         </fieldset>
 
                     </div>
-                </div>
+                </div> -->
+            </div>
+            <div class="alert alert-warning">
+                <strong>Lưu ý !</strong> Nếu quý khách chọn thanh toán chuyển khoản, vui lòng chuyển tiền vé trong vòng
+                <strong>12 tiếng</strong> kể từ thời gian đặt vé. Không nhận chuyển khoản vé vào thứ Bảy, Chủ Nhật.
             </div>
             <!-- end 1 row -->
             <div class="row" style="padding-bottom: 10px;">
@@ -692,6 +717,7 @@
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<!-- <script src="../admin-asset/js"></script> -->
 
 <script>
 $('select[name*="idBen"]').change(function() {
@@ -713,7 +739,6 @@ $('select[name*="idBen"]').change(function() {
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-
     var denChonGhe = document.getElementById('btn-muave');
     var chonghe = document.getElementById('chonghe');
     var chontuyen = document.getElementById('chontuyen');
@@ -813,6 +838,50 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 }, false);
 </script>
-
+<script>
+$(document).ready(function() {
+    $( "#slStart" ).on( "change", function( event ) {
+        var a1 = $(this).val();
+        $('.show_end .tuyendi_show').text(a1);
+    });
+    $( "#slEnd" ).on( "change", function( event ) {
+        var a2 = $(this).val();
+        $('.show_end .tuyenden_show').text(a2);
+    });
+    $( "#datepicker" ).on( "change", function( event ) {
+        var a3 = $(this).val();
+        $('.show_end .date_show').text(a3);
+    });
+    $( "#GioKhoiHanh" ).on( "change", function( event ) {
+        var a4 = $(this).val();
+        $('.show_end .time_show').text(a4);
+    });
+    $( "#TenGhe" ).on( "change", function( event ) {
+        var a5 = $(this).val();
+        $('.show_end .ghe_show').text(a5);
+    });
+    $( "#HoTen" ).on( "change", function( event ) {
+        var a6 = $(this).val();
+        $('.show_end .name_show').text(a6);
+    });
+    $( "#SDT" ).on( "change", function( event ) {
+        var a7 = $(this).val();
+        $('.show_end .phone_show').text(a7);
+    });
+    $( "#Email" ).on( "change", function( event ) {
+        var a8 = $(this).val();
+        $('.show_end .mail_show').text(a8);
+    });
+    $( "#DiaChi" ).on( "change", function( event ) {
+        var a9 = $(this).val();
+        $('.show_end .add_show').text(a9);
+    });
+    $( "#TenHTTT" ).on( "change", function( event ) {
+        var a10 = $(this).val();
+        $('.show_end .httt_show').text(a10);
+    
+    });
+});
+</script>
 
 @endsection

@@ -40,8 +40,16 @@
                             </div>
                             <div class="form-group">
                                 <label>Hình</label>
-                                <input type="file" name="UrlHinh">
+                                <input type="file" name="UrlHinh" value="{{$sodoghe->UrlHinh}}">
                             </div>
+                            <div>
+                            <label>Trạng Thái</label>
+                            <select class="form-control" name="TrangThai">
+                                <option value="1">Hoạt động</option>
+                                <option value="0">Không hoạt động</option>   
+                            </select>
+                            </div>
+                            <br> 
                             <button type="submit" class="btn btn-default">Sửa sơ đồ</button>
                             <button type="reset" class="btn btn-default">Làm mới</button>
                         <form>

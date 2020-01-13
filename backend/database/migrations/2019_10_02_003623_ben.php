@@ -16,6 +16,7 @@ class Ben extends Migration
         Schema::create('ben',function($table){
             $table->increments('id');
             $table->string('TenBen');
+            $table->string('TrangThai');
         });
     }
 

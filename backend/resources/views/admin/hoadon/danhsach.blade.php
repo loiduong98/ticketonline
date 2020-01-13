@@ -12,12 +12,14 @@
                     <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                         <thead>
                             <tr align="center">
-                                <th>ID</th>
+                                <th>ID</th>                               
                                 <th>Ngày đặt vé</th>
+                                <th>Số lượng</th>
                                 <th>Tổng tiền</th>
                                 <th>Ghi chú</th>
                                 <th>Tên khách hàng</th>
                                 <th>Hình thức thanh toán</th>
+                                <th>Trạng thái</th>
                                 <th></th>
                             </tr>
                         </thead>
@@ -26,10 +28,12 @@
                             <tr class="odd gradeX" align="center">
                                 <td>{{$hd->id}}</td>
                                 <td>{{$hd->NgayDatVe}}</td>
+                                <td>{{$hd->SoLuong}}</td>
                                 <td>{{$hd->TongTien}}</td>
                                 <td>{{$hd->GhiChu}}</td>
                                 <td>{{$hd->khachhang->HoTen}}</td>
                                 <td>{{$hd->hinhthucthanhtoan->TenHTTT}}</td>
+                                <td>{{$hd->TrangThai}}</td>
                                 <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="admin/hoadon/chitiet/{{$hd->id}}"> Chi tiết hóa đơn</a></td>                 
                             </tr>
                             @endforeach

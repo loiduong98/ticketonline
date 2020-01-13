@@ -14,6 +14,7 @@
                             <tr align="center">
                                 <th>ID</th>
                                 <th>Tên hình thức thanh toán</th>
+                                <th>Trạng thái</th>
                                 <th>Xóa</th>
                                 <th>Sửa</th>
                             </tr>
@@ -23,6 +24,7 @@
                             <tr class="odd gradeX" align="center">
                                 <td>{{$httt->id}}</td>
                                 <td>{{$httt->TenHTTT}}</td>
+                                <td>{{$httt->TrangThai}}</td>
                                 <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="admin/hinhthucthanhtoan/xoa/{{$httt->id}}"> Xóa</a></td>
                                 <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="admin/hinhthucthanhtoan/sua/{{$httt->id}}">Sửa</a></td>
                             </tr>

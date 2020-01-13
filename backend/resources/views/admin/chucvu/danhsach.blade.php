@@ -14,6 +14,7 @@
                             <tr align="center">
                                 <th>ID</th>
                                 <th>Tên chức vụ</th>
+                                <th>Trạng thái</th>
                                 <th>Xóa</th>
                                 <th>Sửa</th>
                             </tr>
@@ -23,6 +24,7 @@
                             <tr class="odd gradeX" align="center">
                                 <td>{{$cv->id}}</td>
                                 <td>{{$cv->TenCV}}</td>
+                                <td>{{$cv->TrangThai}}</td>
                                 <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="admin/chucvu/xoa/{{$cv->id}}"> Xóa</a></td>
                                 <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="admin/chucvu/sua/{{$cv->id}}">Sửa</a></td>
                             </tr>

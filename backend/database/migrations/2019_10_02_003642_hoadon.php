@@ -16,12 +16,14 @@ class Hoadon extends Migration
         Schema::create('hoadon',function($table){
             $table->increments('id');
             $table->string('NgayDatVe');
+            $table->string('SoLuong');
             $table->string('TongTien');
             $table->string('GhiChu');
             $table->integer('idKH')->unsigned();
             $table->foreign('idKH')->references('id')->on('khachhang');
             $table->integer('idHTTT')->unsigned();
             $table->foreign('idHTTT')->references('id')->on('hinhthucthanhtoan');
+            $table->string('TrangThai');
         });
     }
 

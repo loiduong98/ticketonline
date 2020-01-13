@@ -33,10 +33,6 @@
                                 <input class="form-control" name="SDT" placeholder="Nhập số điện thoại" value="{{$nhanvien->SDT}}"/>
                             </div>
                             <div class="form-group">
-                                <label>Email</label>
-                                <input class="form-control" name="Email" placeholder="Nhập email" value="{{$nhanvien->Email}}"/>
-                            </div>
-                            <div class="form-group">
                                 <label>Địa chỉ</label>
                                 <input class="form-control" name="DiaChi" placeholder="Nhập địa chỉ" value="{{$nhanvien->DiaChi}}"/>
                             </div>
@@ -46,15 +42,22 @@
                             </div>
                             <div class="form-group">
                                 <label>Chức vụ</label>
+                                
                                 <select class="form-control" name="idCV">
+                                <option value="{{$nhanvien->chucvu->id}}">{{$nhanvien->chucvu->TenCV}}</option>
                                     @foreach($chucvu as $cv)
                                     <option value="{{$cv->id}}">{{$cv->TenCV}}</option>
                                     @endforeach
                                 </select>
-                            </div>       
+                            </div>
                             <div class="form-group">
-                                <label>Usersname</label>
-                                <input class="form-control" name="idUsers" placeholder="Usersname" value="{{$nhanvien->users->username}}"/>
+                                <label>Email</label>
+                                <select class="form-control" name="idEmail">
+                                <option value="{{$nhanvien->users->id}}">{{$nhanvien->users->email}}</option>
+                                    @foreach($users as $us)
+                                    <option value="{{$us->id}}">{{$us->email}}</option>
+                                    @endforeach
+                                </select>
                             </div>
                             <div class="form-group">
                                 <label>Giới tính</label>
@@ -64,13 +67,14 @@
                                     <option value="Khác">Giới tính khác</option>
                                 </select>
                             </div>
-                            <div class="form-group">
-                                <label>Tình trạng</label>
-                                <select class="form-control" name="TinhTrang" id="TinhTrang">                                   
-                                    <option value="Hoạt động">Hoạt động</option>
-                                    <option value="Không hoạt động">Không hoạt động</option>
-                                </select>
+                            <div>
+                            <label>Trạng Thái</label>
+                            <select class="form-control" name="TrangThai">
+                                <option value="1">Hoạt động</option>
+                                <option value="0">Không hoạt động</option>   
+                            </select>
                             </div>
+                            <br> 
                             <button type="submit" class="btn btn-default">Sửa nhân viên</button>
                             <button type="reset" class="btn btn-default">Làm mới</button>
                         <form>

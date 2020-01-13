@@ -14,7 +14,8 @@
                             <tr align="center">
                                 <th>ID</th>
                                 <th>Biển số xe</th>
-                                <th>Tên sơ đồ ghé</th>
+                                <th>Tên sơ đồ ghế</th>
+                                <th>Trạng thái</th>
                                 <th>Xóa</th>
                                 <th>Sửa</th>
                             </tr>
@@ -25,6 +26,7 @@
                                 <td>{{$x->id}}</td>
                                 <td>{{$x->BSXe}}</td>
                                 <td>{{$x->sodoghe->TenSoDo}}</td>
+                                <td>{{$x->TrangThai}}</td>
                                 <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="admin/xe/xoa/{{$x->id}}"> Xóa</a></td>
                                 <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="admin/xe/sua/{{$x->id}}">Sửa</a></td>
                             </tr>

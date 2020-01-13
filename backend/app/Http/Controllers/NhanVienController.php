@@ -21,7 +21,12 @@ class NhanVienController extends Controller
         $nhanvien = nhanvien::all();
         $users = User::all();
         $chucvu = chucvu::all();
-    	return view('admin.nhanvien.them',['nhanvien'=>$nhanvien]);
+        $data = array(
+            'nhanvien'=>$nhanvien,
+            'chucvu'=>$chucvu,
+            'users'=>$users
+        );
+    	return view('admin.nhanvien.them',$data);
     }
 
     public function postThem(Request $request)
@@ -32,23 +37,21 @@ class NhanVienController extends Controller
             [
                 'HoTen'=>'required|min:3|max:100|unique:nhanvien',
                 'SDT'=>'required',
-                'Email'=>'required',
                 'DiaChi'=>'required',
                 'NgaySinh'=>'required',
                 'idCV'=>'required',
-                'idUsers'=>'required',
+                'idEmail'=>'required',
                 'GioiTinh'=>'required',
-                'TinhTrang'=>'required'
+                'TrangThai'=>'required'
             ],
             [
                 'SDT.required'=>'Bạn chưa nhập sdt',
                 'GioiTinh.required'=>'Bạn chưa chọn giới tính',
-                'TinhTrang.required'=>'Bạn chưa nhập tình trạng',
-                'Email.required'=>'Bạn chưa nhập email',
+                'TrangThai.required'=>'Bạn chưa nhập tình trạng',
                 'DiaChi.required'=>'Bạn chưa nhập địa chỉ',
                 'NgaySinh.required'=>'Bạn chưa nhập ngày sinh',
                 'idCV.required'=>'Bạn chưa chọn id CV',
-                'idUsers.required'=>'Bạn chưa chọn id Users',
+                'idEmail.required'=>'Bạn chưa chọn Email',
                 'HoTen.required'=>'Bạn chưa nhập tên nhân viên',
                 'HoTen.min'=>'Tên nhân viên quá ngắn',
                 'HoTen.max'=>'Tên nhân viên quá dài'
@@ -56,13 +59,12 @@ class NhanVienController extends Controller
         $nhanvien = new nhanvien;
         $nhanvien->HoTen = $request->HoTen;
         $nhanvien->SDT = $request->SDT;
-        $nhanvien->Email = $request->Email;
         $nhanvien->DiaChi = $request->DiaChi;
         $nhanvien->NgaySinh = $request->NgaySinh;
-        $nhanvien->idCV = $request->chucvu;
-        $nhanvien->idUsers = $request->users;
+        $nhanvien->idCV = $request->idCV;
+        $nhanvien->idEmail = $request->idEmail;
         $nhanvien->GioiTinh = $request->GioiTinh;
-        $nhanvien->TinhTrang = $request->TinhTrang;
+        $nhanvien->TrangThai = $request->TrangThai;
         $nhanvien->save();
         return redirect('admin/nhanvien/them')->with('thongbao','Thêm thành công');
     }
@@ -72,7 +74,13 @@ class NhanVienController extends Controller
         $nhanvien = nhanvien::find($id);
         $chucvu = chucvu::all();
         $users = User::all();
-    	return view('admin.nhanvien.sua',['nhanvien'=>$nhanvien],['chucvu'=>$chucvu]);
+        $data = array(
+            'nhanvien'=>$nhanvien,
+            'chucvu'=>$chucvu,
+            'users'=>$users,
+        );
+       
+    	return view('admin.nhanvien.sua',$data);
     }
 
     public function postSua(Request $request,$id)
@@ -100,16 +108,16 @@ class NhanVienController extends Controller
                 'HoTen.min'=>'Tên nhân viên quá ngắn',
                 'HoTen.max'=>'Tên nhân viên quá dài'
             ]);
-        $nhanvien->HoTen = $request->HoTen;
-        $nhanvien->SDT = $request->SDT;
-        $nhanvien->Email = $request->Email;
-        $nhanvien->DiaChi = $request->DiaChi;
-        $nhanvien->NgaySinh = $request->NgaySinh;
-        $nhanvien->idCV = $request->idCV;
-        $nhanvien->idUsers = $request->idUsers;
-        $nhanvien->GioiTinh = $request->GioiTinh;
-        $nhanvien->TinhTrang = $request->TinhTrang;
-        $nhanvien->save();
+            $nhanvien = new nhanvien;
+            $nhanvien->HoTen = $request->HoTen;
+            $nhanvien->SDT = $request->SDT;
+            $nhanvien->DiaChi = $request->DiaChi;
+            $nhanvien->NgaySinh = $request->NgaySinh;
+            $nhanvien->idCV = $request->idCV;
+            $nhanvien->idEmail = $request->idEmail;
+            $nhanvien->GioiTinh = $request->GioiTinh;
+            $nhanvien->TrangThai = $request->TrangThai;
+            $nhanvien->save();
         return redirect('admin/nhanvien/sua/'.$id)->with('thongbao','Sửa thành công');
     }
 

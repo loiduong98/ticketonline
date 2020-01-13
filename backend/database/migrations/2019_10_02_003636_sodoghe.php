@@ -18,6 +18,8 @@ class Sodoghe extends Migration
             $table->string('TenSoDo');
             $table->integer('SoDong');
             $table->integer('SoCot');
+            $table->integer('UrlHinh');
+            $table->string('TrangThai');
         });
     }
 

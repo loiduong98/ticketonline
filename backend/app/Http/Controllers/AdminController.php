@@ -13,6 +13,8 @@ class AdminController extends Controller
     {
     	return view('admin.layout.index');
     }
-    
+    public function __construct() {
+        $this->middleware('auth');
+    }
     
 }

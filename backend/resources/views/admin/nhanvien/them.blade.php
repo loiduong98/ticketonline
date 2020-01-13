@@ -33,32 +33,12 @@
                                 <input class="form-control" name="SDT" placeholder="Nhập số điện thoại" />
                             </div>
                             <div class="form-group">
-                                <label>Email</label>
-                                <input class="form-control" name="Email" placeholder="Nhập email" />
-                            </div>
-                            <div class="form-group">
                                 <label>Địa chỉ</label>
                                 <input class="form-control" name="DiaChi" placeholder="Nhập địa chỉ" />
                             </div>
                             <div class="form-group">
                                 <label>Ngày sinh</label>
                                 <input class="form-control" type="date" name="NgaySinh" placeholder="Chọn ngày sinh" />
-                            </div>
-                            <div class="form-group">
-                                <label>Chức vụ</label>
-                                <select class="form-control" name="idCV">
-                                    @foreach($nhanvien as $nv)
-                                    <option value="{{$nv->idCV}}">{{$nv->chucvu->TenCV}}</option>
-                                    @endforeach
-                                </select>
-                            </div>       
-                            <div class="form-group">
-                                <label>Username</label>
-                                <select class="form-control" name="idUsers">
-                                    @foreach($nhanvien as $nv)
-                                    <option value="{{$nv->idUsers}}">{{$nv->users->username}}</option>
-                                    @endforeach
-                                </select>
                             </div>
                             <div class="form-group">
                                 <label>Giới tính</label>
@@ -69,12 +49,29 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label>Tình trạng</label>
-                                <select class="form-control" name="TinhTrang" id="TinhTrang">                                   
-                                    <option value="Hoạt động">Hoạt động</option>
-                                    <option value="Không hoạt động">Không hoạt động</option>
+                                <label>Chức vụ</label>
+                                <select class="form-control" name="idCV">
+                                    @foreach($chucvu as $cv)
+                                    <option value="{{$cv->id}}">{{$cv->TenCV}}</option>
+                                    @endforeach
                                 </select>
+                            </div>       
+                            <div class="form-group">
+                                <label>Email</label>
+                                <select class="form-control" name="idEmail">
+                                    @foreach($users as $us)
+                                    <option value="{{$us->id}}">{{$us->email}}</option>
+                                    @endforeach
+                                </select>
+                            </div>                           
+                            <div>
+                            <label>Trạng Thái</label>
+                            <select class="form-control" name="TrangThai">
+                                <option value="1">Hoạt động</option>
+                                <option value="0">Không hoạt động</option>   
+                            </select>
                             </div>
+                            <br> 
                             <button type="submit" class="btn btn-default">Thêm nhân viên</button>
                             <button type="reset" class="btn btn-default">Làm mới</button>
                         <form>

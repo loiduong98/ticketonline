@@ -1,7 +1,7 @@
 <header>
         <nav class="navbar navbar-expand-sm navbar-light bg-info">
             <div class="container">
-                <a class="navbar-brand" href="page/index">Lợi Dương Travel</a>
+                <a class="navbar-brand" href="page/index">Tấn Lợi Travel</a>
                 <button class="navbar-toggler" data-toggle="collapse" data-target="#menuNav">
                     <span class="navbar-toggler-icon"></span>
                 </button>

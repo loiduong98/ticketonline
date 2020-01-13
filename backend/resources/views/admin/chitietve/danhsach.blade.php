@@ -13,6 +13,7 @@
                         <thead>
                             <tr align="center">
                                 <th>ID</th>
+                                <th>ID vé</th>
                                 <th>Tên ghế</th>
                                 <th>Giá</th>
                                 <th>Số lượng</th>
@@ -24,7 +25,8 @@
                             @foreach($chitietve as $ctv)
                             <tr class="odd gradeX" align="center">
                                 <td>{{$ctv->id}}</td>
-                                <td>{{$ctv->chitietghe->TenGhe}}</td>
+                                <td>{{$ctv->idVe}}</td>
+                                <td>{{$ctv->idGhe}}</td>
                                 <td>{{$ctv->Gia}}</td>
                                 <td>{{$ctv->SoLuong}}</td>
                                 <td>{{$ctv->MaBiMat}}</td>                               

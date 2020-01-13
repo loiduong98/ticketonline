@@ -16,7 +16,8 @@ class Chitietghe extends Migration
         Schema::create('chitietghe',function($table){
             $table->increments('id');
             $table->integer('idSoDoGhe')->unsigned();
-            $table->foreign('idSoDoGhe')->references('id')->on('sodoghe');          
+            $table->foreign('idSoDoGhe')->references('id')->on('sodoghe');
+            $table->string('TenGhe');        
         });
     }
 

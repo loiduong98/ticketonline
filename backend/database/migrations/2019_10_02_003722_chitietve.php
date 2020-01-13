@@ -14,10 +14,12 @@ class Chitietve extends Migration
     public function up()
     {
         Schema::create('chitietve',function($table){
+            $table->increments('id');
             $table->integer('idVe')->unsigned();
             $table->integer('idGhe')->unsigned();
-            $table->primary(['idVe', 'idGhe']);
             $table->string('Gia');
+            $table->string('SoLuong');
+            $table->string('MaBiMat');
         });
     }
 

@@ -25,24 +25,25 @@
                         <form action="admin/users/sua/{{$users->id}}" method="POST" enctype="multipart/form-data">
                              <input type="hidden" name="_token" value="{{csrf_token()}}" />
                              <div class="form-group">
-                                <label>username</label>
-                                <input class="form-control" name="username" placeholder="Nhập username" value="{{$users->username}}"/>
+                                <label>Họ tên</label>
+                                <input class="form-control" name="name" placeholder="Nhập name" value="{{$users->username}}"/>
                             </div>
                             <div class="form-group">
-                                <label>password</label>
-                                <input class="form-control" type="password"  name="password" placeholder="Nhập password" value="{{$users->password}}"/>
+                                <label>Email</label>
+                                <input class="form-control" type="email"  name="email" placeholder="Nhập email" value="{{$users->email}}"/>
                             </div>
                             <div class="form-group">
-                                <label>Group</label>
-                                <select class="form-control" name="idGroup" id="idGroup">                                   
-                                    <option value="Users">Users</option>
-                                    <option value="Admin">Admin</option>
+                                <label>Quyền</label>                                                                                                
+                                <select class="form-control" name="level" id="level">                                   
+                                    <option value="1">Super Admin</option>
+                                    <option value="2">Admin</option>
+                                    <option value="3">Thành viên</option>
                                 </select>
                             </div>    
                             <div class="form-group">
-                                <label>Hình</label>
-                                <input type="file" name="urlHinh">
-                            </div>                    
+                                <label>Password</label>
+                                <input class="form-control" type="password"  name="password" value="{{$users->password}}"/>
+                            </div>               
                             <button type="submit" class="btn btn-default">Sửa users</button>
                             <button type="reset" class="btn btn-default">Làm mới</button>
                         <form>

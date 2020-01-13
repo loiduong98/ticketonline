@@ -30,11 +30,24 @@
                             </div>
                             
                             <div class="form-group">
-                                <label>ID Sơ đồ ghế</label>
-                                <input class="form-control" name="idSoDoghe" placeholder="Nhập ID Sơ đồ ghế" value="{{$xe->idSoDoGhe}}"/>
+                                <label>Sơ đồ ghế</label>
+                                <select class="form-control" name="idSoDoGhe">
+                                    <option value="{{$xe->sodoghe->idSoDoghe}}">{{$xe->sodoghe->TenSoDo}}</option>                                  
+                                    @foreach($sodoghe as $sdg)
+                                        <option value="{{$sdg->id}}">{{$sdg->TenSoDo}}</option>
+                                    @endforeach
+                                    
+                                </select>
                             </div>
-                            
-                            
+                            </br>
+                            <div>
+                            <label>Trạng Thái</label>
+                            <select class="form-control" name="TrangThai">
+                                <option value="1">Hoạt động</option>
+                                <option value="0">Không hoạt động</option>   
+                            </select>
+                            </div>
+                            </br>
                             <button type="submit" class="btn btn-default">Sửa Xe</button>
                             <button type="reset" class="btn btn-default">Làm mới</button>
                         <form>

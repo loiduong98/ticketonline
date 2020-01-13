@@ -10,13 +10,15 @@ class XeController extends Controller
 {
     public function getDanhSach()
     {
+		$sodoghe = sodoghe::all();
     	$xe = xe::orderBy('id','DESC')->get();
     	return view('admin.xe.danhsach', ['xe'=>$xe]);
     }
 
     public function getThem()
     {
-        return view('admin.xe.them');
+		$sodoghe = sodoghe::all();
+        return view('admin.xe.them', ['sodoghe'=>$sodoghe]);
     }
 
     public function postThem(Request $request)
@@ -34,7 +36,8 @@ class XeController extends Controller
     		]);
     	$xe = new xe;
     	$xe->BSXe = $request->BSXe;
-    	$xe->idSoDoGhe = $request->idSoDoGhe;
+		$xe->idSoDoGhe = $request->idSoDoGhe;
+		$xe->TinhTrang = $request->TinhTrang;
     	$xe->save();
     	return redirect('admin/xe/them')->with('thongbao','Thêm thành công');
     }
@@ -43,7 +46,7 @@ class XeController extends Controller
     {
 		$xe = xe::find($id);
 		$sodoghe = sodoghe::all();
-        return view('admin.xe.sua', ['xe'=>$xe]);
+        return view('admin.xe.sua', ['xe'=>$xe], ['sodoghe'=>$sodoghe]);
     }
 
     public function postSua(Request $request,$id)
@@ -61,6 +64,7 @@ class XeController extends Controller
     		]);
 			$xe->BSXe = $request->BSXe;
 			$xe->idSoDoGhe = $request->sodoghe;
+			$xe->TinhTrang = $request->TinhTrang;
 			$xe->save();
     	return redirect('admin/xe/sua/'.$id)->with('thongbao','Sửa thành công');
     }

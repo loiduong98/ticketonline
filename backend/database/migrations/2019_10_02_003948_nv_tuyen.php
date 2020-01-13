@@ -14,9 +14,9 @@ class NvTuyen extends Migration
     public function up()
     {
         Schema::create('nv_tuyen',function($table){
+            $table->increments('id');
             $table->integer('idNV')->unsigned();
             $table->integer('idTuyen')->unsigned();
-            $table->primary(['idNV', 'idTuyen']);
         });
     }
 

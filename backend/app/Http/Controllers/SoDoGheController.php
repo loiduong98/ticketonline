@@ -40,6 +40,7 @@ class SoDoGheController extends Controller
         $sodoghe->SoDong = $request->SoDong;
         $sodoghe->SoCot = $request->SoCot;
         $sodoghe->UrlHinh = $request->UrlHinh;
+        
         if($request->hasFile('UrlHinh'))
         {
             $file = $request->file('UrlHinh');  
@@ -60,6 +61,7 @@ class SoDoGheController extends Controller
         {
             $sodoghe->UrlHinh = "";
         }
+        $sodoghe->TrangThai = $request->TrangThai;
         $sodoghe->save();
         return redirect('admin/sodoghe/them')->with('thongbao','Thêm thành công');
     }
@@ -110,6 +112,7 @@ class SoDoGheController extends Controller
         {
             $sodoghe->UrlHinh = "";
         }
+        $sodoghe->TrangThai = $request->TrangThai;
         $sodoghe->save();
         return redirect('admin/sodoghe/sua/'.$id)->with('thongbao','Sửa thành công');
     }

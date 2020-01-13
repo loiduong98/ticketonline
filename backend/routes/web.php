@@ -19,10 +19,6 @@ Route::get('admin/index','AdminController@getLayout');
 Route::get('page/mail','PageController@getMail');
 Route::post('page/mail','PageController@postMail');
 
-Route::get('admin/login','UsersController@getLogin');
-Route::post('admin/login','UsersController@postLogin');
-Route::get('admin/logout','UsersController@getLogout');
-
 Route::group(['prefix'=>'admin'], function(){
 	Route::group(['prefix'=>'tuyen'], function(){
 		Route::get('danhsach','TuyenController@getDanhSach');
@@ -258,9 +254,15 @@ Route::get('qr-code', function () {
 	
     return QrCode::size(500)->generate("16546848645313486");
 });
-// Route::get('update', function () {
-// 	//DB::table('hoadon')->increment('id',176);
-// 	//DB::table('ve')->increment('id',179);
-// 	DB::table('ct_hoadon')->decrement('id_hoadon',1);
-// 	echo "Đã update";
-// });
+
+
+// Đăng ký thành viên
+Route::get('register', [ 'as' => 'register', 'uses' =>'Auth\RegisterController@getRegister']);
+Route::post('register', [ 'as' => 'register', 'uses' =>'Auth\RegisterController@postRegister']);
+ 
+// Đăng nhập và xử lý đăng nhập
+Route::get('login', [ 'as' => 'login', 'uses' => 'Auth\LoginController@getLogin']);
+Route::post('login', [ 'as' => 'login', 'uses' => 'Auth\LoginController@postLogin']);
+ 
+// Đăng xuất
+Route::get('logout','Auth\LogoutController@getLogout');

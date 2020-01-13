@@ -5,7 +5,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">Tuyến
-                            <small>{{$tuyen->DiemDi}} - {{$tuyen->DiemDen}}</small>
+                            <small>{{$tuyen->TenTuyen}}</small>
                         </h1>
                     </div>
                     <!-- /.col-lg-12 -->
@@ -31,28 +31,30 @@
                             <div>
                                 <label>Điểm đi</label>
                                 <select class="form-control" name="idBenDi" id="idBenDi">
-                                    @foreach($tuyen as $t)
-                                    <option value="{{$t->ben->id}}">{{$t->ben->TenBen}}</option>
+                                    <option value="{{$tuyen->ben->id}}">{{$tuyen->ben->TenBen}}</option>
+                                    @foreach($ben as $b)
+                                    <option value="{{$b->id}}">{{$b->TenBen}}</option>
                                     @endforeach
-                                    <!-- @foreach($ben as $b)                                   
-                                    <option
-                                    @if($tuyen->idBenDi == $tuyen->id)
-                                        {{"selected"}}
-                                    @endif
-                                     value="{{$b->id}}">{{$b->TenBen}}
-                                    </option>
-                                    @endforeach -->
                                 </select>
                             </div>
-                            
+                            <br>
                             <div>
                                 <label>Điểm đến</label>
                                 <select class="form-control" name="idBenDen" id="idBenDen">
-                                    @foreach($tuyen as $t)
-                                    <option value="{{$t->ben->id}}">{{$t->ben->TenBen}}</option>
+                                    <option value="{{$tuyen->ben1->id}}">{{$tuyen->ben1->TenBen}}</option>
+                                    @foreach($ben as $b)
+                                    <option value="{{$b->id}}">{{$b->TenBen}}</option>
                                     @endforeach
                                 </select>
-                            </div> 
+                            </div>
+                            <br>
+                            <div>
+                            <label>Trạng Thái</label>
+                            <select class="form-control" name="TrangThai">
+                                <option value="1">Hoạt động</option>
+                                <option value="0">Không hoạt động</option>   
+                            </select>
+                            </div>
                             </br>
                             <button type="submit" class="btn btn-default">Sửa</button>
                             <button type="reset" class="btn btn-default">Làm mới</button>

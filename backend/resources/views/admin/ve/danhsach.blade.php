@@ -1,12 +1,12 @@
 @extends('admin.layout.index') @section('content')
 <style>
-.fa-thumbs-down {
-    color: red!important;
-}
-
-.fa-thumbs-up {
-    color: blue!important;
-}
+    .fa-thumbs-down {
+        color: red !important;
+    }
+    
+    .fa-thumbs-up {
+        color: blue !important;
+    }
 </style>
 <div id="page-wrapper">
     <div class="container-fluid">
@@ -43,13 +43,12 @@
                         <td>{{$v->lichchay->xe->BSXe}}</td>
                         <td>{{$v->NgayKhoiHanh}}</td>
                         <td>{{$v->GioKhoiHanh}}</td>
-                        <td><button class="myDIV"><i class="fa fa-thumbs-down"></i></button>
-
-
+                        <td><div class="myDIV">
+                        {{$v->TrangThai}}
+                        </div>
                         </td>
 
-                        <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a
-                                href="admin/chitietve/chitiet/{{$v->id}}"> Chi tiết vé</a></td>
+                        <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="admin/chitietve/chitiet/{{$v->id}}"> Chi tiết vé</a></td>
 
                         <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="admin/ve/xoa/{{$v->id}}">
                                 Xóa</a></td>
@@ -66,21 +65,19 @@
     <!-- /.container-fluid -->
 </div>
 <script>
-var x = document.getElementsByClassName("myDIV");
-console.log(x);
-console.log(x[1].innerHTML);
+    var x = document.getElementsByClassName("myDIV");
+    console.log(x);
+    console.log(x[1].innerHTML);
 
-for (var i = 0; i < x.length; i++) {
-    x[i].onclick = function() {
-        console.log(this.innerHTML);
-        if (this.innerHTML == '<i class="fa fa-thumbs-down"></i>') {
-            console.log("haha");
-            this.innerHTML = '<i class="fa fa-thumbs-up"></i>';
-        } else {
-            this.innerHTML = '<i class="fa fa-thumbs-down"></i>';
-            console.log("huhu");
+    for (var i = 0; i < x.length; i++) {
+        x[i].onclick = function() {
+            console.log(this.value);
+            if (this.value == 0) {
+                this.innerHTML = "<i class='fa fa-thumbs-down'></i>";
+            } else {
+                this.innerHTML = '<i class="fa fa-thumbs-up"></i>';
+            }
         }
     }
-}
 </script>
 @endsection

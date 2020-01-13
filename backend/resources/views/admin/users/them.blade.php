@@ -25,24 +25,25 @@
                         <form action="admin/users/them" method="POST" enctype="multipart/form-data">
                              <input type="hidden" name="_token" value="{{csrf_token()}}" />
                             <div class="form-group">
-                                <label>username</label>
-                                <input class="form-control" name="username" placeholder="Nhập username" />
+                                <label>Họ tên</label>
+                                <input class="form-control" name="name" placeholder="Nhập họ và tên" />
                             </div>
                             <div class="form-group">
-                                <label>password</label>
-                                <input class="form-control" type="password"  name="password" placeholder="Nhập password" />
+                                <label>Email</label>
+                                <input class="form-control" type="email"  name="email" placeholder="Nhập email" />
                             </div>
                             <div class="form-group">
-                                <label>Group</label>
-                                <select class="form-control" name="idGroup" id="idGroup">                                   
-                                    <option value="Users">Users</option>
-                                    <option value="Admin">Admin</option>
+                                <label>Quyền</label>
+                                <select class="form-control" name="level" id="level">                                   
+                                    <option value="1">Super Admin</option>
+                                    <option value="2">Admin</option>
+                                    <option value="3">Thành viên</option>
                                 </select>
                             </div>                            
                             <div class="form-group">
-                                <label>Hình</label>
-                                <input type="file" name="urlHinh">
-                            </div>                    
+                                <label>Password</label>
+                                <input class="form-control" name="password" placeholder="Nhập password" />
+                            </div>           
                             <button type="submit" class="btn btn-default">Thêm users</button>
                             <button type="reset" class="btn btn-default">Làm mới</button>
                         <form>

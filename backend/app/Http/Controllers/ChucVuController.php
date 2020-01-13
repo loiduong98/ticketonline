@@ -31,6 +31,7 @@ class ChucVuController extends Controller
             ]);
         $chucvu = new chucvu;
         $chucvu->TenCV = $request->TenCV;
+        $chucvu->TrangThai = $request->TrangThai;
         $chucvu->save();
         return redirect('admin/chucvu/them')->with('thongbao','Thêm thành công');
     }
@@ -54,6 +55,7 @@ class ChucVuController extends Controller
                 'TenCV.max'=>'Tên bến quá dài'
             ]);
             $chucvu->TenCV = $request->TenCV;
+            $chucvu->TrangThai = $request->TrangThai;
             $chucvu->save();
         return redirect('admin/chucvu/sua/'.$id)->with('thongbao','Sửa thành công');
     }

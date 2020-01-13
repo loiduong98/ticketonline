@@ -20,6 +20,7 @@ class Tuyen extends Migration
             $table->foreign('idBenDi')->references('id')->on('ben');
             $table->integer('idBenDen')->unsigned();
             $table->foreign('idBenDen')->references('id')->on('ben');
+            $table->string('TrangThai');
         });
     }
 

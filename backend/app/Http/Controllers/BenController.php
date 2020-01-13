@@ -31,6 +31,7 @@ class BenController extends Controller
             ]);
         $ben = new ben;
         $ben->TenBen = $request->TenBen;
+        $ben->TrangThai = $request->TrangThai;
         $ben->save();
         return redirect('admin/ben/them')->with('thongbao','Thêm thành công');
     }
@@ -54,6 +55,7 @@ class BenController extends Controller
                 'TenBen.max'=>'Tên bến quá dài'
             ]);
             $ben->TenBen = $request->TenBen;
+            $ben->TrangThai = $request->TrangThai;
             $ben->save();
         return redirect('admin/ben/sua/'.$id)->with('thongbao','Sửa thành công');
     }

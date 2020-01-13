@@ -20,10 +20,12 @@ class Nhanvien extends Migration
             $table->string('Email');
             $table->string('DiaChi');
             $table->string('NgaySinh');
+            $table->string('GioiTinh');
             $table->integer('idCV')->unsigned();
             $table->foreign('idCV')->references('id')->on('chucvu');
             $table->integer('idUser')->unsigned();
             $table->foreign('idUsers')->references('id')->on('users');
+            $table->string('TrangThai');
         });
     }
 

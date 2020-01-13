@@ -27,7 +27,15 @@
                             <div class="form-group">
                                 <label>Tên Bến</label>
                                 <input class="form-control" name="TenBen" placeholder="Nhập tên Bến" />
-                            </div> 
+                            </div>
+                            <div>
+                            <label>Trạng Thái</label>
+                            <select class="form-control" name="TrangThai">
+                                <option value="1">Hoạt động</option>
+                                <option value="0">Không hoạt động</option>   
+                            </select>
+                            </div>
+                            <br> 
                             <button type="submit" class="btn btn-default">Thêm Bến</button>
                             <button type="reset" class="btn btn-default">Làm mới</button>
                         <form>

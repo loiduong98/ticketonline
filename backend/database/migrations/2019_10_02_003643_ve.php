@@ -22,6 +22,12 @@ class Ve extends Migration
             $table->foreign('idLC')->references('id')->on('lichchay');
             $table->integer('idHD')->unsigned();
             $table->foreign('idHD')->references('id')->on('hoadon');
+            $table->string('NgayKhoiHanh');
+            $table->string('GioKhoiHanh');
+            $table->string('TrangThai');
+            $table->integer('idXe')->unsigned();
+            $table->foreign('idXe')->references('id')->on('xe');
+
         });
     }
 

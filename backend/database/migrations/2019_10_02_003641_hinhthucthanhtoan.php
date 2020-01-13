@@ -16,6 +16,7 @@ class Hinhthucthanhtoan extends Migration
         Schema::create('hinhthucthanhtoan',function($table){
             $table->increments('id');
             $table->string('TenHTTT');
+            $table->string('TrangThai');
         });
     }
 

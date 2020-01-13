@@ -42,6 +42,7 @@ class TuyenController extends Controller
         $tuyen->TenTuyen = $request->TenTuyen;
         $tuyen->idBenDi = $request->idBenDi;
         $tuyen->idBenDen = $request->idBenDen;
+        $tuyen->TrangThai = $request->TrangThai;
         $tuyen->save();
         return redirect('admin/tuyen/them')->with('thongbao','Thêm thành công');
     }
@@ -50,7 +51,7 @@ class TuyenController extends Controller
     {
         $tuyen = tuyen::find($id);
         $ben = ben::all();
-        return view('admin.tuyen.sua', ['tuyen'=>$tuyen],['ben'=>$ben]);
+        return view('admin.tuyen.sua', ['tuyen'=>$tuyen], ['ben'=>$ben]);
     }
 
     public function postSua(Request $request,$id)
@@ -72,6 +73,7 @@ class TuyenController extends Controller
             $tuyen->TenTuyen = $request->TenTuyen;
             $tuyen->idBenDi = $request->ben;
             $tuyen->idBenDen = $request->ben;
+            $tuyen->TrangThai = $request->TrangThai;
             $tuyen->save();
         return redirect('admin/tuyen/sua/'.$id)->with('thongbao','Sửa thành công');
     }

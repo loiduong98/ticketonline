@@ -11,7 +11,7 @@ class nhanvien extends Model
 
     public function users()
     {
-    	return $this->belongsTo('App\User','idUsers','id');
+    	return $this->belongsTo('App\User','idEmail','id');
     }
 
      public function chucvu()

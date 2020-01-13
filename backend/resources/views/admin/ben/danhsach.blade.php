@@ -14,6 +14,7 @@
                             <tr align="center">
                                 <th>ID</th>
                                 <th>Tên bến</th>
+                                <th>Trạng thái</th>
                                 <th>Xóa</th>
                                 <th>Sửa</th>
                             </tr>
@@ -23,6 +24,7 @@
                             <tr class="odd gradeX" align="center">
                                 <td>{{$b->id}}</td>
                                 <td>{{$b->TenBen}}</td>
+                                <td>{{$b->TrangThai}}</td>
                                 <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="admin/ben/xoa/{{$b->id}}"> Xóa</a></td>
                                 <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="admin/ben/sua/{{$b->id}}">Sửa</a></td>
                             </tr>
